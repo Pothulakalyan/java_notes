@@ -1,0 +1,4996 @@
+C Programming - scanf("%d...",&x,...);
+If I want to read the input from the user i have to import a class called "Scanner"
+
+Step1: import java.util.Scanner;
+
+Step2: Creation of Object to Scanner class.
+       Scanner sc=new Scanner(System.in);
+	   
+Step3: Use appropriate methods for reading input.
+	
+	   byte		-	nextByte();
+	   short	-	nextShort();
+	   int		-	nextInt();
+	   long		-	nextLong();
+	   
+	   char		-	nextLine().charAt(0);
+	   
+	   float	-	nextFloat();
+	   double	- 	nextDouble();
+	   
+	   String	- 	nextLine();
+
+
+Output:
+C		-		printf();
+C++		-		cout<<"hello";
+Python	-		print()
+java	-		System.out.println();	
+
+1) Display message on your screen
+System.out.println("Welcome to Java Programming");
+	-> Welcome to Java Programming
+	
+2) Display value of a variable
+System.out.println(variable);
+Ex:
+    int a=10;
+	System.out.println(a);
+		-> 	10
+		
+3) Display Message + value of a variable.
+System.out.println("Message "+variable);
+Ex:
+    int a=10;
+	System.out.println("a = "+a);
+		-> 	a = 10 
+
+Syntax:
+FileName: First.java
+	class <classname>
+	{
+	  public static void main(String args[])
+	  {
+	     // write your code.
+	  }
+	}
+
+Step1: Compilation	- 	javac
+	   D:\Programs>javac filename.java
+			->	Once the file is compiled successfully then it create a file called
+			    .class file.
+
+Step2: Execution	-	java
+	   D:\Programs>java classname
+	   
+1) Program to print your name on the screen.
+
+FileName: First.java
+====================
+class First
+{
+  public static void main(String args[])
+  {
+      System.out.println("Technical HUB");
+  }
+}
+		
+
+
+01/09/22:
+=========
+Arrays:
+    An array is fixed ordered collection of homogenious elements(same datatype) stored in a continueous memory locations and refered through a single name.
+
+Declaration of Array:
+---------------------
+  Syntax:
+           datatype arr_name[]=new datatype[size];
+  Ex:
+		int x[]=new int[10];	// x -> Allocate memory for 10 integer elements i.e 40 byte
+		char y[]=new char[10];
+		float z[]=new float[10];
+		boolean b[]=new boolean[5];
+
+Initialization of an array:
+---------------------------
+Assigning values into an array is called initialization.
+
+1. Compiletime Initialization:
+   Syntax:
+		datatype arr_name[]={value1,value2,....,valuen};
+   Ex:
+		int x[]={10,20,30,40};
+		String names[]={"Ramesh","Sravanthi","Kishore"};
+		
+		System.out.println(x.length);	// 4
+		System.out.println(names.length); // 3
+
+
+2. Runtime Initialization:
+Assigning values into an array at the time of program execution.
+
+Ex:     Scanner sc=new Scanner(System.in);
+		// Reading of an array from the user
+		int x[]=new int[10];
+		for(int i=0;i<10;i++)
+		   x[i]=sc.nextInt();
+
+        //Diplay of an array
+		
+		for(int i=0;i<10;i++)
+		   System.out.println(x[i]);  (or) System.out.print(x[i]+" ")
+		   
+		
+foreach loop:
+=============
+        for(datatype ele : arr_name)
+		  System.out.print(ele+" ");
+ 
+Program to read the basic salary of an employee and then find the Net salary by consider the following.
+HRA= 20%
+DA = 15%
+TA = 3000
+
+PF = 15%
+
+NS = ?
+
+
+
+================================================================================================
+08-09-2022
+
+Installation and Setting of classpath:
+--------------------------------------
+
+Step1: Install JDK1.8.exe in your system.
+
+Step2: Copy the following path 
+		C:\Program Files\Java\jdk1.8.0_301\bin
+		
+Step3: Go to the Edit System Environmental Variable
+	  MyComputer
+		|
+		 -> Properties
+				|
+				 -> Advanced System Settings
+						|
+						 -> Environmental Variables
+								|
+								 -> User Variable
+										|
+										 -> Select the Path
+												|
+												 -> Click on Edit
+														|
+														 -> Add the above path here.
+														 
+---------------------------------------------------------------------------------------------
+Structure of a Java Program:
+---------------------------
+1. Documentation Section			[Optional]
+2. Package creation					[Optional]
+3. Package Importing				[Optional]
+4. Interface Declaration			[Optional]
+5. Class definition					[Optional]
+6. Class Definition with main method[Mandatory]
+
+Syntax:
+ class <classname>
+ {
+      public static void main(String args[])
+	  {
+	     // write your code here.
+	  
+	  }
+ }
+
+
+Ex: FileName: FirstProg.java
+
+class FirstProg
+ {
+      public static void main(String args[])
+	  {
+	    System.out.println("Hello World");
+	  
+	  }
+ }
+
+Execution of Java Program:
+--------------------------
+It is a two step process.
+	1. Compilation
+		javac is the command used to compile the java program. Once I compiled the java program it 
+		creates a new file is called .class file.
+		
+		D:\AIML>javac Filename.java
+		D:\AIML>javac FirstProg.java
+		
+	2. Run the program
+	   java is the command used to run the compiled file.
+	   
+	   D:\AIML>java <classname> that contains main method.
+	   D:\AIML>java FirstProg
+	   
+	   
+C:\Users\LENOVO>D:
+
+D:\>cd TSE_AIML
+
+D:\TSE_AIML>cd Temp
+
+D:\TSE_AIML\temp>cd Rajesh
+The system cannot find the path specified.
+
+D:\TSE_AIML\temp>cd..
+
+D:\TSE_AIML>notepad FirstProg.java
+
+D:\TSE_AIML>javac FirstProg.java
+
+D:\TSE_AIML>java FirstProg
+Hello World
+
+D:\TSE_AIML>
+
+---------------------------------------------------------------------------------------------
+09-09-2020
+
+Reading of Input:
+----------------
+Scanner is a class available in java.util Package. It is used to read the data from the user.
+
+The following are the fundamental datatypes in java.
+
+byte		-	1
+short		-	2
+int			-	4
+long		-	8
+
+char		-	2
+
+float		-	4
+double		-	8
+
+boolean		-	1bit
+
+String 
+
+If I want to read the input from the user, I need to follow the below steps.
+
+Step1:
+	Scanner sc=new Scanner(System.in);
+	
+Step2:
+	Call the appropriate method to store the value into a variable.
+	
+	byte	-	nextByte();
+	short	-	nextShort();
+	int		-	nextInt();
+	long	-	nextLong();
+	
+	float	-	nextFloat();
+	double	-	nextDouble();
+	
+	boolean	-	nextBoolean();
+	
+	String	-	nextLine(); or next();
+	
+	char	-	nextLine().charAt(0);
+
+Step3:
+	Close the Scanner Object.
+	sc.close();
+
+
+------------------------------------------------------------------------
+1) Program to perform airthmetic operations by reading 2 numbers as an input.
+
+import java.util.Scanner;
+class AirthmeticOperations
+{
+   public static void main(String args[])
+   {
+         int a,b;
+         Scanner sc=new Scanner(System.in);
+         a=sc.nextInt();
+         b=sc.nextInt();
+         
+	 System.out.println(a+b);
+	 System.out.println(a-b);
+	 System.out.println(a*b);
+	 System.out.println(a/b);
+     
+ 	 sc.close();
+   }
+
+}
+
+-----------------------------------------------------------------------
+Displaying of information:
+
+1) Message only
+	System.out.println("Hello World!");
+	
+2) Value of a variable only
+	int x=10;
+	System.out.println(x);
+	
+3) Message + Value of a variable.
+   int x=10;
+   System.out.println("x = "+x);
+   
+   x = 10
+   print("x =",x)		=> It is in Python.
+   
+2) Program to find Simple Interest.
+import java.util.Scanner;
+class SimpleInterest
+{
+   public static void main(String args[])
+   {
+         int P,T,R;
+	 float I;
+         Scanner sc=new Scanner(System.in);
+         P=sc.nextInt();
+         T=sc.nextInt();
+	 R=sc.nextInt();
+
+	 I=(float)(P*T*R)/100;
+
+         System.out.format("%.4f",I);
+             
+ 	 sc.close();
+   }
+
+}
+
+----------------------------------------------------------------------------------
+Operator:
+	-> It is a symbol used to perform an operation.
+	-> In an expression it includes operand and operator.
+		y = a + b [=, + -> Operators, a,b and y are called Operands]
+
+Types of Operators:
+-------------------
+1) Arithmetic Operators [+, -, *, /, %]
+2) Relational Operators [<, <=, >, >=,==, !=]
+3) Logical Operators [&&, ||, !]
+4) Bitwise Operators [&, |, ~, ^, >>, <<]
+5) Assignment Operators [=, +=, -=, *=,......]
+6) Specail Operators [?:, instaceof, ,, .]
+
+
+Logical Operators:
+------------------
+	Logical Operators are used to connect two or more expressions.
+
+&&	-	Returns true if both arguments are true.
+||	- 	Returns true if atleast one argument is true.
+!	-	Returns true if it argument is false viceversa.
+
+Examples:
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=10,y=20,z=30;
+		if(x++>10 && y++>20)
+			System.out.println(x+" "+y);
+		else
+			System.out.println((x-1)+" "+(y-1));
+	}
+
+}
+Output:
+10 19
+---------------------------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=10,y=20,z=30;
+		if(x++>9 && y++>20)
+			System.out.println(x+" "+y);
+		else
+			System.out.println((x-1)+" "+(y-1));
+	}
+
+}
+Output:
+10 20
+
+----------------------------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=10,y=20,z=30;
+		if(x++>9 && y++>=20)
+			System.out.println(x+" "+y);
+		else
+			System.out.println((x-1)+" "+(y-1));
+	}
+
+}
+Output:
+11 21
+
+----------------------------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=10,y=20,z=30;
+		if(x++>9 || y++>20)
+			System.out.println(x+" "+y);
+		else
+			System.out.println((x-1)+" "+(y-1));
+	}
+
+}
+Output:
+11 20
+------------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=10,y=20,z=30;
+		if(x++>10 || y++>20)
+			System.out.println(x+" "+y);
+		else
+			System.out.println((x-1)+" "+(y-1));
+	}
+
+}
+Output:
+10 20
+
+Observations:
+	1. Logical Operators will work on boolean data types only.
+	2. Second expression evaluation is optional.
+	3. It is realatively speed in the program execution.
+
+-----------------------------------------------------------------------------
+Bitwise Operators: [&, |, ~, ^, <<, >>]
+
+& 	-	It returns true if both the arguments are true.
+| 	-	It returns true if atleast one argument is true.
+^	-	It returns true if the arguments are in opposite or alternative.
+
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(true & true);
+		System.out.println(true | false);
+		System.out.println(false | false);
+		System.out.println(true ^ false);
+	}
+
+}
+true
+true
+false
+true
+
+---------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(4 & 5);
+		System.out.println(4 | 5);
+		System.out.println(4 ^ 5);
+	}
+
+}
+
+4
+5
+1
+
+---------------------------------------------------------
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(4 & 5);
+		System.out.println(4 | 5);
+		System.out.println(4 ^ 5);
+		System.out.println('A' ^ 'B');
+	}
+
+}
+4
+5
+1
+3
+Observations:
+	1. These operators are applicable with boolean, integer, character.
+	2. All the arguments evaluation is manadatory.
+	3. It is relatively takes much time when compare to logical operators.
+------------------------------------------------------------------------------- 
+~ operator:
+==========
+
+>> & <<:
+========
+Shift operators are used to shift the bits towards its left or right depends on operator we are used.
+Syntax:
+	variable<<value;
+	variable>>value;
+
+Ex:
+	int x=15;
+	x=x<<2;		// x value becomes 60 i.e x is multiplied with pow(2,no of bits to shift)
+	
+	int x=60;
+	x=x>>2;		// x value becomes 15 i.e x is divided with pow(2,no of bits to shift)
+
+Example:
+import java.util.Scanner;
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x,y,z;
+		x=sc.nextInt();
+
+		y=x<<2;
+		z=x>>2;
+		System.out.println(y);
+		System.out.println(z);
+		sc.close();
+	}
+
+}
+
+Output:
+
+-------------------------------------------------------------------------
+Special Operators:
+?: [Terinary or Conditional Operator]
+It is an operator used to perform simple if else operation. It also called as short hand operator for if else.
+
+Syntax:
+	output= expr1 ? expr2 : expr3;
+	
+	if expr1 evaluates true then expr2 is evaluated and assigned to output variable and if it is false then expr3 is evaluated and assigned to the output variable.
+	
+Example:
+import java.util.Scanner;
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int age;
+		age=sc.nextInt();
+
+		/*if(age>=18)
+			System.out.println("Eligible for Vote");
+		else
+			System.out.println("Not Eligible for Vote");*/
+		String result=age>=18?"Eligible for Vote":"Not Eligible for Vote";
+		System.out.println(result);
+	}
+
+}
+
+Output:
+8
+Not Eligible for Vote
+
+-----------------------------------------------------------------------------
+Operator Precedence:
+Precedence will tells you the order of operators execution in an expression.
+
+   int x= a * b + (c-d);
+
+  PUMA IS REBL
+  P 	-	Postfix notations
+  U		-	Unary Operators
+  M		-	Multiplicative
+  A 	-	Additive Operators
+  
+  S		- 	Shift Operators
+  R 	-	Relational Operators
+  E 	-	Equality Operators
+  B		-	Bitwise Operators
+  L		-	Logical Operators
+  
+
+
+
+Operator Associativity:
+
+import java.util.Scanner;
+class Sample
+{
+  public static void main(String args[])
+  {
+       Scanner sc=new Scanner(System.in);
+	   int a,b,c,max;
+	   a=sc.nextInt(); //10
+	   b=sc.nextInt(); //25
+	   c=sc.nextInt(); // 15
+	   max=a>b?(a>c?a:c):(b>c?b:c);
+	   System.out.println(max);
+  }
+}
+
+----------------------------------------------------------------------------------
+Contol Statements:
+The statements which are used to control the flow of execution of a program are called control statements.
+
+2 Types;
+1. Conditional Statements
+	if, if else, if else if, nested if, switch
+
+2. Iterative or looping statements
+   for, while, do while loop
+   
+break, continue
+
+
+package labprog;
+import java.util.Scanner;
+public class Roots {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a,b,c,d;
+		double r1,r2;
+		Scanner sc=new Scanner(System.in);
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=sc.nextInt();
+		d=b*b - 4*a*c;
+		if(d==0)
+		{
+			r1=r2=-(double)b/(2*a);
+			System.out.format("%.2f\n", r1);
+			System.out.format("%.2f",r2);
+		}
+		else if(d>0)
+		{
+			r1=(-b+Math.sqrt(d))/(2*a);
+			r2=(-b-Math.sqrt(d))/(2*a);
+			System.out.format("%.2f\n", r1);
+			System.out.format("%.2f",r2);
+		}
+		else
+		{
+			double real,img;
+			real=-(double)b/(2*a);
+			img=Math.sqrt(Math.abs(d))/(2*a);
+			System.out.format("%.2f + i %.2f\n",real,img);
+			System.out.format("%.2f - i %.2f",real,img);
+		}
+	}
+
+}
+
+-------------------------------------------------------------------------
+Looping Statements:
+------------------
+for, while, do while.
+Syntax:
+for(initialization;condition;incr/decr)
+{
+  body of the loop
+}
+
+While loop syntax:
+
+initialization;
+while(condition)
+{
+  body of the loop
+  
+  incr/decr;
+}
+
+do while:
+
+do
+{
+   body of the loop;
+
+   incr/decr;   
+}while(condition);
+
+1. Program to find the factorial of a given number.
+import java.util.Scanner;
+class FactorialDemo
+{
+    public static int findFact(int n)
+	{
+	   int fact=1;
+	   for(int i=1;i<=n;i++)
+	     fact=fact*i;
+	   return fact;
+	}
+
+    public static void main(String args[])
+	{
+	     Scanner sc=new Scanner(System.in);
+		 int n,res;
+		 n=sc.nextInt();
+		 
+		 res=findFact(n);
+	     System.out.println(res);
+	}
+
+}
+
+---------------------------------------------------------------
+import java.util.Scanner;
+
+public class PrimeDemo {
+
+	 public static boolean isPrime(int n)
+		{
+		   if(n<2)
+			   return false;
+		  for(int i=2;i<=(int)Math.sqrt(n);i++)
+		   {
+			   if(n%i==0)
+				   return false;   
+		   }
+		   return true;
+		}
+
+	    public static void main(String args[])
+		{
+		     Scanner sc=new Scanner(System.in);
+			 int n,res;
+			 n=sc.nextInt();
+			 
+			 if(isPrime(n))
+				 System.out.println("Prime");
+			 else
+				 System.out.println("Not a Prime");
+		}
+}
+
+---------------------------------------------------------------------------------
+22-09-22
+========
+switch:
+------
+If I want to check the multiple conditions on the same variable then we need to go for switch statement.
+The main advantage of switch case is code readability.
+
+Syntax:
+-------
+switch(variable)
+{
+   case label1:
+			statements;
+			break;
+   case label2:
+			statements;
+			break;
+	.......
+	
+	case labeln:
+			statements;
+			break;
+	default:
+			statements;
+			break;
+}
+The following are the datatypes supproted for switch case.
+	byte, short, int, char, String (1.7+)
+
+1) In switch case it can't allows to write more than one case with same label.
+    or it can't allow duplicate case labels.
+	
+2) In switch case expressions also allowed as case labels but it should be a   
+   compiletime constant.
+   
+3) 
+
+
+public class SwitchDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=3;
+		switch(x)
+		{
+		case 1:
+				System.out.println("Hello");
+				break;
+		case 2:
+				System.out.println("Welcome");
+				break;
+		case 1+2:
+				System.out.println("Hai");
+				break;
+		default:
+				System.out.println("Have a nice day!");
+				break;
+		}
+		System.out.println("Task completed");
+
+	}
+
+}
+
+Hai
+-------------------------------------------------------
+
+public class SwitchDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=3;
+		final int y=1;
+		switch(x)
+		{
+		case 1:
+				System.out.println("Hello");
+				break;
+		case 2:
+				System.out.println("Welcome");
+				break;
+		case y+2:
+				System.out.println("Hai");
+				break;
+		default:
+				System.out.println("Have a nice day!");
+				break;
+		}
+		System.out.println("Task completed");
+
+	}
+
+}
+
+------------------------------------------------------
+
+public class SwitchDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name="ravi";
+		switch(name)
+		{
+		case "ravi":
+				System.out.println("Hello");
+				break;
+		case "suma":
+				System.out.println("Welcome");
+				break;
+		case "balu":
+				System.out.println("Hai");
+				break;
+		default:
+				System.out.println("Have a nice day!");
+				break;
+		}
+		System.out.println("Task completed");
+
+	}
+
+}
+
+Hello
+Task completed
+
+---------------------------------------------------------------------
+Program to check the given character is vowel or not.
+import java.util.Scanner;
+public class SwitchDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		char ch=sc.nextLine().charAt(0);
+		switch(ch)
+		{
+		case 'A':
+		case 'E':
+		case 'I':
+		case 'O':
+		case 'U':
+			System.out.println("It is vowel");
+			break;
+		default:
+			System.out.println("It is Consonant");
+			break;
+		}
+		System.out.println("Task completed");
+
+	}
+
+}
+------------------------------------------------------------------------
+Program to print the given number is words.
+Input: 371
+Output: Three Seven One
+
+Input: 102
+Output: One Zero Two
+
+import java.util.Scanner;
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int d=(int)Math.log10(n);
+		while(n>0)
+		{
+			int r=n/(int)Math.pow(10, d);
+			switch(r)
+			{
+			case 1:
+				System.out.print("ONE ");
+				break;
+			case 2:
+				System.out.print("TWO ");
+				break;
+			case 3:
+				System.out.print("THREE ");
+				break;
+				
+			}
+			n=n%(int)Math.pow(10,d);
+			d--;
+		}
+		//System.out.println(d);
+
+	}
+
+}
+
+--------------------------------------------------------
+
+Program to print Prime Palindromes inbetween two numbers.
+import java.util.Scanner;
+public class PrimePalindromes {
+
+	public static boolean isPrime(int n)
+	{
+		if(n<1)
+			return false;
+	    for(int i=2;i<=(int)Math.sqrt(n);i++)
+	    {
+	    	 if(n%i==0)
+	    		 return false;
+	    }
+	    return true;
+	}
+	public static boolean isPalindrome(int n)
+	{
+		int r1,r2,flag=0;
+		int d=(int)Math.log10(n);
+		while(n>0)
+		{
+			r1=n%10;
+			r2=n/(int)Math.pow(10, d);
+			if(r1!=r2)
+			{
+				flag=1;
+				break;
+			}
+			n=n%(int)Math.pow(10, d);
+			n/=10;
+			d-=2;
+		}
+		if(flag==0)
+		    return true;
+		else
+			return false;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int m,n;
+		m=sc.nextInt();
+		n=sc.nextInt();
+		for(int i=m;i<=n;i++)
+		{
+			if(isPrime(i) && isPalindrome(i))
+				System.out.print(i+" ");
+		}
+		sc.close();
+	}
+
+}
+
+------------------------------------------------------------------
+A B C D E
+A B C D E
+A B C D E
+A B C D E
+A B C D E
+
+3 5
+A B C D E
+F G H I J
+K L M N O 
+
+---------------------------------------------------------------------------------
+
+23-09-22
+========
+Array:
+Array Declaration
+Array Initialization
+Types of Arrays
+Working with Array
+
+Array:
+------
+Array is fixed ordered collection of homegenious elements is stored in a continueous memory locations.
+
+Array Declaration:
+------------------
+Syntax: 
+		In C programming 	-	int x[size];
+		In Java Programming -	datatype array_name[];
+								array_name=new datatype[size];
+								
+Ex:
+		int x[]=new int[10];	// x is the array name allocated for storing 	
+									10 integer elements.
+		char ch[]=new char[5];
+		float y[]=new float[10];
+		double z[]=new double[10];
+		String names[]=new String[10]; // It can allow to store 10 Strings.
+		
+
+Question:
+Once I created an array by using the keyword new, what values will store in that array initailly?
+Answer:
+Once we created an array by using new keyword then all the elements of that array are filled with default values of that datatype.
+package arrays;
+
+public class ArrayDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         float x[]=new float[10];
+         for(int i=0;i<10;i++)
+        	 System.out.println(x[i]);
+	}
+
+}
+
+Output:
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+---------------------
+Array Initialization:
+--------------------
+Assigning values into an array is called initialization.
+Two types of initialization is there
+1) Compiletime Initialization
+Assigning of values into an array that can be done at compiletime is called Compiletime initialization.
+Syntax:
+	datatype arr_name[]={value1,value2,value3,......};
+Ex:
+	int x[]={10,20,30,40};
+	float y[]={10.2f,3.4f,5.6f};
+	char ch[]={'A','E','I','O','U'};
+	String names[]={"AEC","ACET","ACOE"};
+
+In Compiletime initialization, how can we find the length of the array?
+
+	arrayname.length;	will return the length of that array.
+
+package arrays;
+
+public class ArrayDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x[]={10,20,30,40};
+		float y[]={10.2f,3.4f,5.6f};
+		char ch[]={'A','E','I','O','U'};
+		String names[]={"AEC","ACET","ACOE"};
+         
+        	 System.out.println(x.length);
+        	 System.out.println(y.length);
+        	 System.out.println(ch.length);
+        	 System.out.println(names.length);
+	}
+
+}
+Output:
+------
+4
+3
+5
+3
+----------------------------------------------------------------------
+Note:
+Once the array initialized at compiletime we can't allow to increase/decrease the size of array.
+	
+
+2) Runtime Initialization
+Assigning the values into an array at time of program execution is called runtime initialization.
+
+	Reading of an array:
+	====================
+	In C:
+		for(int i=0;i<n;i++)
+		  scanf("%d",&x[i]);
+	In Java:
+		for(int i=0;i<n;i++)
+			x[i]=sc.nextInt();
+	
+	Displaying of an array:
+	=======================
+	In C:
+		for(int i=0;i<n;i++)
+			printf("%d ",x[i]);
+	In Java:
+		for(int i=0;i<n;i++)
+			System.out.print(x[i]+" ");
+			System.out.print(x[i]+" ");
+
+
+	By using foreach loop to print the array elements
+	Syntax:
+			for(datatype ele:array_name)
+			    System.out.println(ele);
+	Ex:
+			for(int ele:x)
+				System.out.println(ele);
+	
+	
+	package arrays;
+
+public class ArrayDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x[]={10,20,30,40};
+		//Displaying using normal for loop
+		for(int i=0;i<x.length;i++)
+			System.out.print(x[i]+" ");
+		System.out.println();
+		//Displaying array using foreach loop
+		
+		for(int ele:x)
+			System.out.print(ele+" ");
+	}
+
+}
+
+10 20 30 40 
+10 20 30 40 
+-----------------------------------------------------------------------------
+
+1. Program to find the unique elements in an array.
+Input:
+8
+1 2 3 4 2 5 6 3
+Output:
+1 4 5 6
+
+package arrays;
+import java.util.Scanner;
+public class UniqueElement {
+    public static void uniqueElements(int arr[])
+    {
+    	int i,j;
+    	for(i=0;i<arr.length-1;i++)
+    	{   int count=0;
+    	    if(arr[i]!=-999)
+    	    {
+    		for(j=i+1;j<arr.length;j++)
+    		{
+    			if(arr[i]==arr[j])
+    			{
+    				arr[j]=-999;
+    				count++;
+    			}
+    		}
+    		if(count==0)
+    			System.out.print(arr[i]+" ");
+    	    }
+    	}
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x[],n,i;
+		n=sc.nextInt();
+		x=new int[n];
+		for(i=0;i<n;i++)
+			x[i]=sc.nextInt();
+		
+		uniqueElements(x);
+
+	}
+}
+
+
+
+---------------------------------------------------------------------------
+2. Program to find the Common elements between two arrays.
+Input:
+5
+1 2 3 4 5
+5
+3 4 5 6 7
+Output:
+3 4 5
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+3. Program to find the uncommon elements between two arrays.
+Input:
+5
+1 2 3 4 5
+5
+3 4 5 6 7
+Output:
+1 2 6 7
+
+package arrays;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class UncommonElements {
+
+	public static void main(String args[])
+    {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		int m=sc.nextInt();
+		int[] b =new int[m];
+		for(int i=0;i<m;i++)
+		{
+			b[i]=sc.nextInt();
+		}
+		HashSet<Integer> set=new HashSet<>();
+		int c=0;
+		for(int i=0;i<n;i++)
+		{
+			c=0;
+			for(int j=0;j<m;j++)
+			{
+				if(a[i]==b[j])
+				{
+					c=1;
+					break;
+				}
+			}
+			if(c==0)
+			{
+				set.add(a[i]);
+			}
+		}
+		int f=0;
+		for(int i=0;i<m;i++)
+		{
+			f=0;
+			for(int j=0;j<n;j++)
+			{
+				if(b[i]==a[j])
+				{
+					f=1;
+					break;
+				}
+			}
+			if(f==0)
+			{
+				set.add(b[i]);
+			}
+		}
+		System.out.println(set);
+    }
+
+}
+
+
+----------------------------------------------------------------------------
+4. Program to move all zeros towards its right and non zero elements move to towards its left.
+Input:
+8
+1 0 0 1 1 0 1 1
+Output:
+1 1 1 1 1 0 0 0
+
+
+package arrays;
+
+import java.util.Scanner;
+
+public class MoveZeros {
+
+	public static void moveZeros(int arr[])
+	{
+		int i,j=0;
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i]==0)
+			{
+				j=i;
+				break;
+			}
+		}
+		for(i=j+1;i<arr.length;i++)
+		{
+			if(arr[i]==1)
+			{
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+				j++;
+			}
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x[],n,i;
+		n=sc.nextInt();
+		x=new int[n];
+		for(i=0;i<n;i++)
+			x[i]=sc.nextInt();
+		
+		moveZeros(x);
+		for(int ele:x)
+			System.out.print(ele+" ");
+	}
+
+}
+
+-------------------------------------------------------------------------
+5. Program to find the maximum product of two elements of array.
+Input:
+6
+1 5 3 4 6 7
+Output:
+42
+
+public class ArrayApp {
+
+
+  public static int getMaxMultiplicationOfTwoNumbers(int[] arr) {
+    if(arr.length < 2) {
+      return -1;
+    }
+    if(arr.length == 2) {
+      return arr[0] * arr[1];
+    }
+    int smallest = arr[0] < arr[1] ? arr[0] : arr[1];
+    int secondSmallest = arr[0] > arr[1] ? arr[0] : arr[1];
+    int greatest = arr[0] > arr[1] ? arr[0] : arr[1];
+    int secondGreatest = arr[0] < arr[1] ? arr[0] : arr[1];
+    for(int i = 2; i < arr.length; i++) {
+      if(arr[i] < smallest) {
+        secondSmallest = smallest;
+        smallest = arr[i];
+      } else if(arr[i] < secondSmallest) {
+        secondSmallest = arr[i];
+      }
+      
+      if(arr[i] > greatest) {
+        secondGreatest = greatest;
+        greatest = arr[i];
+      } else if(arr[i] > secondGreatest) {
+        secondGreatest = arr[i];
+      }
+    }
+    
+    int firstTwoMultiplication = smallest * secondSmallest;
+    int lastTwoMultiplication = greatest * secondGreatest;
+    
+    return firstTwoMultiplication > lastTwoMultiplication ?  firstTwoMultiplication : lastTwoMultiplication;
+  }
+
+
+    public static void main(String[] args) {
+		int n,x[];
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        x=new int[n];
+        for(int i=0;i<n;i++)
+        x[i]=sc.nextInt();
+
+    System.out.println(getMaxMultiplicationOfTwoNumbers(x));
+  }
+}
+
+--------------------------------------------------------------------------
+6. Program to find the count of each individual elements of the array.
+Input:
+6
+1 12 5 1 5 3
+Output:
+1  2
+12 1
+5  2
+3  1 
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+7. Program to find the Majority element in an array.
+Majority Element: 
+An element is said to be an array contains greater than n/2 times then it is said to be majority element where n is length of the array.
+Note: An array contains atleast one majority element.
+Input:
+6
+2 1 3 1 1 1
+Output:
+1
+
+
+
+
+
+------------------------------------------------------------------------------
+8. Program to print the elements of an array after k rotations in clock wise circular rotation.
+Input:
+6
+1 2 3 4 5 6
+2				// 2 rotations
+Output:
+5 6 1 2 3 4
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+24-09-2022
+==========
+2D Arrays:
+==========
+In java Programming 2D Arrays is nothing but array of arrays.
+
+Syntax:
+	datatype arr_name[][]=new datatype[row_size][col_size];
+	
+Ex:
+	int x[][]=new int[3][2];		// 3 rows and 2 columns in each row 
+	float y[][]=new float[4][4];	// 4 rows and 4 columns in each row
+	
+Reading of 2D Array:
+	for(i=0;i<row;i++)
+	{
+	   for(j=0;j<col;j++)
+	    {
+	       arr_name[i][j]=sc.nextInt();
+		}
+	}
+	
+Displaying of a 2D Array:
+	for(i=0;i<row;i++)
+	{
+	   for(j=0;j<col;j++)
+	    {
+	       arr_name[i][j]=sc.nextInt();
+		}
+	}
+
+---------------------------------------------------------------------------
+Practice:
+Write a java program to find the maximum element in each row by taking 2D array as an input.
+Input:
+3 3
+1 2 3
+4 5 6
+7 8 9
+Output:
+3
+6
+9
+
+Source Code:
+package arrays;
+import java.util.Scanner;
+public class Maximumin2D {
+    public static int findMaximum(int arr[])
+    {
+    	int max=arr[0];
+    	for(int i=1;i<arr.length;i++)
+    	{
+    		if(arr[i]>max)
+    			max=arr[i];
+    	}
+    	return max;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x[][],row,col,i,j;
+		row=sc.nextInt();
+		col=sc.nextInt();
+		x=new int[row][col];
+		for(i=0;i<row;i++)
+			for(j=0;j<col;j++)
+				x[i][j]=sc.nextInt();
+		
+		for(i=0;i<row;i++)
+		{
+			System.out.println(findMaximum(x[i]));
+		}
+
+	}
+
+}
+
+-------------------------------------------------------------------------------
+Assignment:
+1. Program to find the sum of all elements of the given 2D Array as an input.
+Input:
+3 3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+45
+
+
+
+
+-----------------------------------------------------------------------------
+2. Program to find the absolute difference between diagonal and anti diagonal elements of a given square matrix.
+Input:
+3 3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+0
+Explanation: Diagonal Sum= 1 + 5 + 9 = 15
+			 Anti Diagonal Sum= 3 + 5 + 7 = 15
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+3. Program to find the sum and product of two matrices.
+
+
+
+
+
+---------------------------------------------------------------------------
+4.Write a program which reads square matrix and then prints "Yes" if its Row Sums, Column Sums and Diagonal Sums all are same, otherwise prints "No".
+Input:
+3 3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+No
+
+package arrays;
+
+import java.util.Scanner;
+public class ArraySum {
+	public static boolean isEqualSum(int arr[][],int r,int c)
+	{
+		int s1=0,s2=0,s3=0;;
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				if(i==j)
+					s1=s1+arr[i][j];
+				else if(i+j==r-1)
+					s2+=arr[i][j];
+			}
+		}
+		if(s1!=s2)
+			return false;
+		else
+		{
+			for(int i=0;i<r;i++)
+			{  s2=0;
+			   s3=0;
+				for(int j=0;j<c;j++)
+				{
+					s2+=arr[i][j];
+					s3+=arr[j][i];
+				}
+				if(s2==s3 && s2==s1)
+					continue;
+				else 
+					return false;
+			}
+		}
+		
+		return true;	
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x[][],row,col,i,j;
+		row=sc.nextInt();
+		col=sc.nextInt();
+		x=new int[row][col];
+		for(i=0;i<row;i++)
+			for(j=0;j<col;j++)
+				x[i][j]=sc.nextInt();
+		if(isEqualSum(x,row,col))
+			System.out.println("YES");
+		else
+			System.out.println("NO");
+	}
+
+}
+
+------------------------------------------------------------------------
+5. Program to find the transpose of a given matrix.
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+6. Program to check the given matrix is Identity matrix or not.
+
+
+
+
+
+
+
+----------------------------------------------------------------------------
+7. Write a program which reads a 2D Matrix and then print the elements of the matrix by traversing in a row wise raster fashion. 
+Input:
+4 5
+4 5 5 5 5
+1 4 4 5 6
+2 2 2 2 2
+1 4 4 4 8
+
+Output:
+4 5 5 5 5 6 5 4 4 1 2 2 2 2 2 8 4 4 4 1
+
+
+
+
+
+
+
+------------------------------------------------------------------------------- 
+8. Program to print spiral matrix of a 2 Dimensional Matrix.
+Input:
+ 4 4
+ 1  2  3  4
+ 5  6  7  8 
+ 9  10 11 12
+ 13 14 15 16
+ 
+Output:
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+29-09-2022
+==========
+Program to perform the Mergesort on given array.
+package arrays;
+import java.util.Scanner;
+public class MergeSor {
+
+	public static void merge(int arr[],int si,int m,int ei)
+	{
+		int i=si;
+		int j=m+1;
+		int k=0;
+		int x[]=new int[ei-si+1];
+		while(i<=m && j<=ei)
+		{
+			if(arr[i]<=arr[j])
+			   x[k++]=arr[i++];
+			else
+				x[k++]=arr[j++];
+		}
+		while(i<=m)
+			x[k++]=arr[i++];
+		while(j<=ei)
+			x[k++]=arr[j++];
+		int s=0;
+		for(i=si;i<=ei;i++)
+			 arr[i]=x[s++];
+	}
+	public static void divideArray(int arr[],int beg,int end)
+	{
+		if(beg<end)
+		{
+			int mid=(beg+end)/2;
+			divideArray(arr,beg,mid);
+			divideArray(arr,mid+1,end);
+			merge(arr,beg,mid,end);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner sc=new Scanner(System.in);
+       int x[],n,i;
+       n=sc.nextInt();
+       x=new int[n];
+       for(i=0;i<n;i++)
+    	   x[i]=sc.nextInt();
+       
+       System.out.println("Before Sorting:");
+       for(int ele:x)
+          System.out.print(ele+" ");
+       System.out.println();
+        divideArray(x,0,n-1);
+       System.out.println("After Sorting:");
+        for(int ele:x)
+           System.out.print(ele+" ");
+	}
+
+}
+
+---------------------------------------------------------------------------
+String:
+=======
+ -> Immutability vs Mutability
+ -> equals() and ==
+ -> String Constrctors
+ -> String Methods
+ -> Practice the String based programs
+ -> String vs StringBuffer vs StringBuilder
+
+
+String:
+	A group of characters which enclosed with double quotes.
+Immutability vs Mutability:
+---------------------------
+Immutability:
+	An object can't allow to change its content once it is created such objects are called as Immutable objects.
+	Ex:
+		String
+	
+package strings;
+
+public class StringDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       String s1="Technical ";
+       System.out.println(s1); //Technical
+       String s2=s1.concat("HUB");
+       System.out.println(s1); //Technical HUB
+       System.out.println(s2);
+	}
+
+}
+Technical 
+Technical 
+Technical HUB
+
+------------------------------------------------------------
+package strings;
+
+public class StringDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      /* String s1="Technical ";
+       System.out.println(s1); //Technical
+       String s2=s1.concat("HUB");
+       System.out.println(s1); //Technical HUB
+       System.out.println(s2);*/
+		StringBuffer sb1=new StringBuffer("Technical ");
+		System.out.println(sb1);
+		sb1.append("HUB");
+		System.out.println(sb1);
+	}
+
+}
+Technical 
+Technical HUB
+
+--------------------------------------------------------
+package strings;
+
+public class StringDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       String s1="Aditya";
+       String s2="Aditya";
+       String s3=new String("Aditya");
+       System.out.println(s1==s2);
+       System.out.println(s1.equals(s2));
+       System.out.println(s1==s3);
+       System.out.println(s1.equals(s3));
+	}
+
+}
+true
+true
+false
+true
+
+Note:
+  == 	   -> is always compare the addresses of the objects
+  equals() -> will compare content of the two String objects.
+
+--------------------------------------------------------------------------
+30-09-2022
+==========
+1) String s1=new String();	// It creates an empty string.
+
+2) String s2=new String(String Value); 	// It create an object that store the 	
+										value passed as a paramenter
+										
+3) String s3=new String(StringBuffer sb1);
+
+4) String s4=new String(char ch[]); // It will convert the character array to 
+										String
+			char ch[]={'C','S','E'};
+			String s=new String(ch);		// s="CSE"
+
+
+
+Methods supported by String class:
+---------------------------------
+1) length()		- It returns the length of the given String.[it includes space]
+
+2) charAt(int)	- It returns the character at the specific index.
+			String s="Aditya";
+			s.charAt(0);		=> A
+			s.charAt(3);		=> t 
+
+3) indexOf(char) - It returns the index of the character found in the given string.
+			String s="aditya";
+			s.indexOf('a');		=> 0
+			s.indexOf('i');		=> 2
+			s.indexOf('z');		=> -1
+			
+4) lastIndexOf(char)	- It returns the index of the given character found from 
+							the last to first.
+			s.lastIndexOf('a');		=> 5
+			
+5) toLowercase(), toUpperCase(),trim()
+			String s="  aditya@123  ";
+			s=s.trim();
+			System.out.println(s);
+			
+6) contains(String str)	- It returns true if the str contains in the given String 
+						  otherwise return false;
+
+7) replace(char,char), replaceFirst(String str1,String str2),
+   replaceAll(String str1,String str2)
+   It is used to replace the old character with new character.
+
+		String s="aditya";
+		System.out.println(s.replace('a', 'A'));
+		System.out.println(s.replaceFirst("a", "A"));
+		System.out.println(s.replaceAll("a", "A"));
+		
+		AdityA
+		Aditya
+		AdityA
+
+8) equals(String str), equalsIgnoreCase(String str)
+	It is used to compare two String equal or not.
+		String s1="aditya";
+		String s2="AdityA";
+		System.out.println(s1.equals(s2)); 				//false
+		System.out.println(s1.equalsIgnoreCase(s2)); 	//true
+
+9) isEmpty() 	- It returns true if the String is empty otherwise returns false.
+
+10) substring(int beg), substring(int beg,int end)
+	
+	It returns the substring from the given String by beg to end-1 index.
+		String s1="aditya";
+		String s2="AdityA";
+		System.out.println(s1.substring(2)); 	
+		System.out.println(s2.substring(2,5)); 
+		
+		itya
+		ity
+		
+11) toCharArray()	- It is used to convert a String to character Array.
+		String s="CSE";
+		char ch[]=s.toCharArray();
+		ch={'C','S','E'};
+
+12) startsWith(String str), endsWith(String str)
+	It returns a true if the given String is either startsWith or endsWith some particular string pattern respectively.
+	
+13) String [] split(String str)
+	split() method is used to separate the String based on parameter you are passing to split method.
+	String date="30-09-2022";
+			String words[]=date.split("-");
+			words[0]	-> 	"30"
+			words[1]	->	"09"
+			words[2]	-> 	"2022"
+	
+	
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String s2[]=s1.split(" ");
+		System.out.println(s2.length);
+
+		AEC ACOE ACET ADC APC ECE CSE IT
+		8
+
+14) int compareTo(String str)
+		
+			s1.compareTo(s2);
+			0 => Both the strings are equal.
+			+ve => s1 > s2
+			-ve => s2 > s1
+			
+
+-----------------------------------------------------------------------------
+1) Program to print all the characters in the given String line by line.
+Input: THUB
+Output:
+T
+H 
+U 
+B 
+
+import java.util.Scanner;
+class Sample
+{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+	String s1=sc.nextLine();
+	for(int i=0;i<s1.length();i++)
+	{
+	   System.out.println(s1.charAt(i));
+	}
+  }
+}
+
+------------------------------------------------------------------
+2) Program to print all the vowels in a given String.
+package strings;
+import java.util.Scanner;
+class StringMethods
+{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+	String s1=sc.nextLine();
+	String vowels="aeiouAEIOU";
+	for(int i=0;i<s1.length();i++)
+	{
+		char ch=s1.charAt(i);
+		if(vowels.contains(String.valueOf(ch)))
+			System.out.print(ch+" ");
+		/*char ch=s1.charAt(i);
+		if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+			System.out.println(ch);*/
+	}
+  }
+}
+
+----------------------------------------------------------------
+3) Program to print the number of Uppercase, lowercase, digits, symbols in a given 
+   String.
+Input:
+AdityA@123#
+
+Output:
+2 4 3 2
+
+U L D S [Space is also considered as symbol]
+
+Note: Character in java.lang package have the following methods
+	1. isLowerCase()
+	2. isUpperCase()
+	3. isDigit()
+	4. isAlphnumeric()
+	5. isSpace()
+
+package strings;
+import java.util.Scanner;
+class StringMethods
+{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+	String s1=sc.nextLine();
+	int U=0,L=0,D=0,S=0;
+	
+	for(int i=0;i<s1.length();i++)
+	{
+		char ch=s1.charAt(i);
+		if(Character.isLetter(ch))
+		{
+		    if(Character.isLowerCase(ch))
+		    	L++;
+		    else
+		    	U++;
+		}
+		else if(Character.isDigit(ch))
+			D++;
+		else
+			S++;
+	}
+	System.out.print(U+" "+L+" "+D+" "+S);
+  }
+}
+
+-------------------------------------------------------------------
+4) Program to find the given String is Prime Palindrome String or not.
+package strings;
+
+import java.util.Scanner;
+
+public class PalindromeString {
+	public static boolean isPalindrome(String str)
+	{
+		int n=str.length();
+		for(int i=0;i<=n/2;i++)
+		{
+			if(str.charAt(i)!=str.charAt(n-i-1))
+				return false;
+		}
+		return true;
+	}
+	public static boolean isPrime(int num)
+	{
+		for(int i=2;i<=(int)Math.sqrt(num);i++)
+			if(num%i==0)
+				 return false;
+		return true;
+	}
+	public static void main(String args[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  String s1=sc.nextLine();
+	  int sum=0;
+	  for(int i=0;i<s1.length();i++)
+		sum=sum+s1.charAt(i);
+	  System.out.println(sum);
+	
+	if(isPalindrome(s1) && isPrime(sum))
+		System.out.println("Prime Palindrome String");
+	else
+		System.out.println("Not a Prime Palindrome String");
+	
+  }
+
+}
+---------------------------------------------------------------------------------
+5)  
+Given two strings a and b consisting of lowercase characters. The task is to check whether two given strings are an anagram of each other or not. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, act and tac are an anagram of each other.
+https://practice.geeksforgeeks.org/problems/anagram-1587115620/1
+
+Input:a = allergy, b = allergic
+Output: NO
+Explanation: Characters in both the strings are not same, so they are not anagrams.
+
+Input: silent, listen 
+Output: YES
+
+
+package strings;
+import java.util.Scanner;
+public class Anagrams {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String s2=sc.nextLine();
+		int found=1;
+		int ch1[]=new int[26];
+		int ch2[]=new int[26];
+		for(int i=0;i<s1.length();i++)
+			ch1[s1.charAt(i)-'a']++;
+		/*int x=97;
+		for(int ele:ch1)
+			System.out.println((char)x++ +" -> "+ele);*/
+		for(int i=0;i<s1.length();i++)
+			ch2[s2.charAt(i)-'a']++;
+		for(int i=0;i<26;i++)
+		{
+			if(ch1[i]!=ch2[i])
+			{
+				found=0;
+				break;
+			}
+		}
+		if(found==1)
+			System.out.println("Anagrams");
+		else
+			System.out.println("Not anagrams");
+	}
+
+}
+-----------------------------------------------------------------
+6)
+Longest Palindrome
+Given a string s which consists of lowercase or uppercase letters, return the length of the longest palindrome that can be built with those letters.
+Letters are case sensitive, for example, "Aa" is not considered a palindrome here.
+Example 1:
+Input: s = "abccccdd"
+Output: 7
+Explanation: 
+One longest palindrome that can be built is "dccaccd", whose length is 7.
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+7)
+Find the Index of the First Occurrence in a String
+https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+Input:
+	Aditya Engineering College
+	ity
+	
+Output:
+	2
+	
+import java.util.Scanner;
+class Sample{
+
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanne(System.in);
+	String s1=sc.nextLine();
+	String s2=sc.nextLine();
+	System.out.println(s1.indexOf(s2));
+  }
+}
+
+--------------------------------------------------------------------------
+8)
+Write a program which reads a set of Strings into an array and then print the strings which contains more number of "vowels".
+Input:
+Rama Sita Laxman Hanuma Ravan
+Output:
+Hanuma
+
+package strings;
+import java.util.Scanner;
+public class MaximumVowels {
+
+	public static int getVowelCount(String str)
+	{
+		String vowels="aeiouAEIOU";
+		int count=0;
+		for(int i=0;i<str.length();i++)
+		{
+			char ch=str.charAt(i);
+			if(vowels.contains(ch+""))
+				count++;
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.nextLine();
+        											
+        String words[]=s1.split(" ");
+        int maximum=-1,index=-1;
+        for(int i=0;i<words.length;i++)
+        {
+        	int c=getVowelCount(words[i]);
+        	if(c>maximum)
+        	{
+        		maximum=c;
+        		index=i;
+        	}
+        }
+        System.out.println(words[index]+" "+maximum);
+	}
+
+}
+
+-----------------------------------------------------------------------
+9)
+Program to implement the following.
+If the character unicode value is prime then print that character in alternative case otherwise print the character is as it is.
+Input: ABC
+Output:ABc
+
+package strings;
+import java.util.Scanner;
+public class PrimeCharacters {
+	public static boolean isPrime(int num)
+	{
+		for(int i=2;i<=(int)Math.sqrt(num);i++)
+			if(num%i==0)
+				 return false;
+		return true;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Scanner sc=new Scanner(System.in);
+      String word=sc.nextLine();
+      String result="";
+      for(int i=0;i<word.length();i++)
+      {
+    	  if(isPrime((int)word.charAt(i)))
+    	  {
+    		  if(Character.isLowerCase(word.charAt(i)))
+    			  result=result+(char)(word.charAt(i)-32);
+    		  else
+    			  result=result+(char)(word.charAt(i)+32);
+    	  }
+    	  else
+    	  {
+    		result=result+word.charAt(i);  
+    	  }
+      }
+      System.out.println(result);
+	}
+
+}
+----------------------------------------------------------------------------------
+10)
+Program to find the absolute difference between product and sum of digits in a given string.
+Input: ab123cd4
+Output:14 
+import java.util.Scanner;
+class Sample
+{
+  public static void main(String args[])
+  {
+     Scanner sc=new Scanner(System.in);
+	 String s1=sc.nextLine();
+	 int prod=1,sum=0;
+	 for(int i=0;i<s1.length();i++)
+	 {
+	      if(Character.isDigit(s1.charAt(i)))
+		      {
+			    sum=sum+s.charAt(i)-'0';
+				prod=prod*s.charAt(i)-'0';
+			  }
+	 }
+	 System.out.println(Math.abs(sum-prod));
+  }
+}
+
+-----------------------------------------------------------------
+11)
+Reverse Words in a String
+Link: https://leetcode.com/problems/reverse-words-in-a-string/
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+12)
+First repeating character in a String.
+Input: 
+str = “hello thub” 
+Output: l 
+l is the first element that repeats
+
+
+
+
+
+
+--------------------------------------------------------------------
+13)
+Remove Duplicates
+https://practice.geeksforgeeks.org/problems/remove-duplicates3034/1
+Given a string without spaces, the task is to remove duplicates from it.
+Note: The original order of characters must be kept the same. 
+Input: S = "zvvo"
+Output: "zvo"
+Explanation: Only keep the first occurrence
+
+
+
+
+
+
+------------------------------------------------------------------
+14)
+Decode String
+https://leetcode.com/problems/decode-string/
+Given an encoded string, return its decoded string.
+The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. 
+Note that k is guaranteed to be a positive integer.
+
+Example 1:
+Input: s = "3[a]2[bc]"
+Output: "aaabcbc"
+
+Example 2:
+Input: s = "3[a2[c]]"
+Output: "accaccacc"
+
+Example 3:
+Input: s = "2[abc]3[cd]ef"
+Output: "abcabccdcdcdef"
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+07-10-22:
+=========
+OOPs Concepts:
+1) Object
+2) Class
+3) Data Abstraction
+4) Encapsulation
+5) Inheritance
+6) Polymorphism
+
+Object:
+ It is nothing but anything that exist physically in the real world.
+ Ex: pen, bag, yourself e  tc..
+ 
+Class:
+ A class is a group of similar objects. A class is a model or blueprint for creating objects.
+ 
+Data Abstraction:
+ Showing essential one and hide the unwanted details.
+ In Java we can implement data abstraction by using the access specifiers.
+    private, public, protocted and no modifier.
+	
+Encapsulation:
+   Wrapping of data and methods into a single entity to avoid accidental modfification to the data.
+   In java we can implement encapsulation by using class.
+   
+   class = data + methods
+   
+Inheritance:
+   it is a relationship
+  It is a process of creating a new class from existing one. The main advantage of inheritance is "Reusability".
+  In Java we can implement inheritance by using the keyword 'extends'.
+
+Polymorphism:
+  Single object with different behaviours at different times.
+  + -> it will work as an addition operator if i am taking the 
+       operands are numbers.
+	   int x=10+20;
+	   
+  + -> It will work as concatination operator if any one operand is  
+       string.
+	   String s="T" + 20;	=> T20
+  Ex:
+     yourself is an example of polymorphism.
+
+Structure of class:
+------------------
+   
+   class <class-name>
+   {
+       variables;
+	      +
+	   methods();
+	   
+	   public static void main(String args[])
+	   {
+	        class-name obj_name=new class-name();  // Object Creation
+			
+			obj_name.variable;		// Accessing of variables of a class using object
+			obj_name.method();		// Accessing the methods of a class using object
+			   
+	   }
+   }
+ Note: To access the members of a class in java we have to use (.) operator.
+ 
+ Members of class: Variables and methods which are declared inside a class are called members of a class.
+ 
+ 
+package oops;
+
+public class ClassDemo {
+   //variables
+	int x;
+	public void setX(int m)
+	{
+		x=m;
+	}
+	public int getX()
+	{
+		return x;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        //Classname obj=new Classname();
+		ClassDemo obj=new ClassDemo();
+		obj.setX(10);
+		System.out.println(obj.getX());   // Method call
+		System.out.println(obj.x);		  // Accessing Member variable
+	}
+
+}
+
+10
+10
+------------------------------------------------------------------------------
+package oops;
+
+public class ClassDemo {
+   //variables
+	int x;
+	public void setX(int m)
+	{
+		x=m;
+	}
+	public int getX()
+	{
+		return x;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        //Classname obj=new Classname();
+		ClassDemo obj1=new ClassDemo();
+		ClassDemo obj2=new ClassDemo();
+		obj1.setX(10);
+		obj2.setX(20);
+		System.out.println(obj1.getX());   // Method call
+		System.out.println(obj2.getX());   // Accessing Member variable
+	}
+
+}
+
+10
+20
+
+-------------------------------------------------------------------------------
+
+package oops;
+import java.util.Scanner;
+public class Student {
+     String rollno,name,college,address,branch;
+     int year;
+     float percentage;
+     Scanner sc=new Scanner(System.in);
+     public void getDetails()
+     {
+    	 System.out.println("Enter the RollNum, Name, Branch");
+    	 rollno=sc.nextLine();
+    	 name=sc.nextLine();
+    	 branch=sc.nextLine();
+    	 System.out.println("Enter the year, percentage");
+    	 year=sc.nextInt();
+    	 percentage=sc.nextFloat();
+    	 sc.nextLine();
+    	 System.out.println("Enter the College Name and Address");
+    	 college=sc.nextLine();
+    	 address=sc.nextLine();
+    	 
+     }
+     public void showDetails()
+     {
+    	 System.out.println("Student ID:"+rollno);
+    	 System.out.println("Name: "+name);
+    	 System.out.println("Branch: "+branch);
+    	 System.out.println("Year: "+year);
+    	 System.out.println("Percentage: "+percentage);
+    	 System.out.println("College: "+college);
+    	 System.out.println("Address: "+address);
+     }
+     
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         Student s1=new Student();
+         s1.getDetails();
+         s1.showDetails();
+	}
+
+}
+
+Enter the RollNum, Name, Branch
+10
+Ravi
+AIML
+Enter the year, percentage
+2
+74.58
+Enter the College Name and Address
+AEC
+Surampalem
+Student ID:10
+Name: Ravi
+Branch: AIML
+Year: 2
+Percentage: 74.58
+College: AEC
+Address: Surampalem
+
+-------------------------------------------------------------------------------
+Assignment:
+Write a Java program to display the details of a person. Personal details should be given in one method and the qualification details in another method. 
+Hint:
+   Person:
+	   ID,
+	   Name,
+	   Age,
+	   Gender,
+	   Address,
+	   
+	   UG
+	   UG_Marks
+	   PG
+	   PG_Marks
+	   
+	   
+	   
+ 
+-------------------------------------------------------------------------------------
+Next Topics to cover in the next class is
+Constructor
+this Object
+Static variables.
+08-10-22:
+=========
+OOP:
+  OOPs Concept:
+    Object, Class, DataAbstraction, Encapsulation, Inheritance, Polymorphism.
+	
+Constructor:
+------------
+Constructor is a special type of member method it can be used to initialize the members of a class at the time of object creation.
+
+access_specifiers returntype methodname(arguments...)
+{
+
+}
+Rules of Constructor:
+---------------------
+1) Constructor name should be the class name.
+2) Constructor will not return any value so no return type for 
+   constructor.
+3) Constructors will be executed automatically at the time of object 
+   creation.
+4) Construcotrs will take arguments also.   
+
+Types of Constructors:
+----------------------
+1) Default Constructor: If you are not written any constructor in a class then java compiler automatically create a constructor with no arguments and initialize the members of class with default values.
+package oops;
+public class Test {
+      int x;
+           
+	public static void main(String[] args) {
+		Test t=new Test();  // Object Creation
+		System.out.println(t.x);
+	}
+
+}
+
+0
+
+2) Constructor with No arguments
+   If you write a constructor in a class without any arguments is called Constructor with no arguments.
+package oops;
+public class Test {
+      int x;
+      public Test()  // Constructor with no arguments
+      {
+    	 System.out.println("Constructor with no arguments");
+    	 x=10;
+      }
+     
+	public static void main(String[] args) {
+		Test t=new Test();  // Object Creation
+		System.out.println(t.x);
+	}
+
+}
+
+Constructor with no arguments
+10
+
+3) Parameterized Constructor
+   A constructor with arguments is called parameterized constructor.
+package oops;
+
+public class Test {
+      int x;
+      public Test(int y) //parameterized constructor
+      {
+    	 System.out.println("Constructor with arguments");
+    	 x=y;
+      }
+     
+	public static void main(String[] args) {
+		Test t=new Test(15);  // Object Creation
+		System.out.println(t.x);
+	}
+
+}
+
+
+4) Copy Constructor
+
+    
+
+
+Note: 
+   In a class we can allow to write multiple constructor types.
+
+package oops;
+
+public class Test {
+      int x;
+    public Test()
+    {
+    	System.out.println("Constructor with No agruments");
+        x=101;
+    }
+    public Test(int y)
+    {
+    	System.out.println("Constructor with arguments");
+    	x=y;
+    }
+     
+	public static void main(String[] args) {
+		Test t1=new Test();  //Constructor without arguments 
+		Test t2=new Test(202); // Constructor with arguments
+		System.out.println(t1.x); // 101
+		System.out.println(t2.x); // 202
+	}
+
+}
+
+Constructor with No agruments
+Constructor with arguments
+101
+202
+
+--------------------------------------------------
+package oops;
+
+public class Test {
+      int x;
+      float y;
+    public Test()
+    {
+    	System.out.println("Constructor with No agruments");
+        x=101;
+        y=3.14f;
+   
+    }
+    public Test(int m)
+    {
+    	System.out.println("Constructor with 1 argument");
+    	x=m;
+    	y=6.5f;
+    }
+    public Test(int m,float n)
+    {
+    	System.out.println("Constructor with 2 arguments");
+        x=m;
+        y=n;
+    }
+     
+	public static void main(String[] args) {
+		Test t1=new Test();  //Constructor without arguments 
+		Test t2=new Test(202); // Constructor with arguments
+		Test t3=new Test(303,4.5f);
+		System.out.println(t1.x+" "+t1.y); // 
+		System.out.println(t2.x+" "+t2.y); // 
+		System.out.println(t3.x+" "+t3.y); //
+	}
+
+}
+
+
+Constructor with No agruments
+Constructor with 1 argument
+Constructor with 2 arguments
+101 3.14
+202 6.5
+303 4.5
+
+-------------------------------------------------------
+package oops;
+
+public class Test {
+      int x;
+      float y;
+    public Test()
+    {
+    	System.out.println("Constructor with No agruments");
+        x=101;
+        y=3.14f;
+   
+    }
+    public Test(int m)
+    {
+    	System.out.println("Constructor with int argument");
+    	x=m;
+    	y=6.5f;
+    }
+    public Test(float n)
+    {
+    	System.out.println("Constructor with float argument");
+        x=404;
+        y=n;
+    }
+    public Test(int m,float n)
+    {
+    	System.out.println("Constructor with 2 arguments");
+        x=m;
+        y=n;
+    }
+     
+	public static void main(String[] args) {
+		Test t1=new Test();  //Constructor without arguments 
+		Test t2=new Test(202); // Constructor with arguments
+		Test t3=new Test(303,4.5f);
+		Test t4=new Test(34.56f);
+		System.out.println(t1.x+" "+t1.y); // 
+		System.out.println(t2.x+" "+t2.y); // 
+		System.out.println(t3.x+" "+t3.y); //
+		System.out.println(t4.x+" "+t4.y); //
+	}
+
+}
+
+Constructor with No agruments
+Constructor with int argument
+Constructor with 2 arguments
+Constructor with float argument
+101 3.14
+202 6.5
+303 4.5
+404 34.56
+
+-------------------------------------------------------
+Constructor Overloading:
+========================
+A class that contains more than one constructor with different types of arguments or different in their sequence is called constructor overloading.
+
+   different types of argument:
+       public Test(int)
+	   public Test(float)
+	   public Test(int,float)
+	   
+   different in their sequence:
+       public Test(int,float)
+	   public Test(float,int)
+
+Note: The java compiler will differentiate the constructors based on
+	1. Number of arguments
+	2. Type of arguments
+	3. The seqeuence of arguments or order of arguments
+	
+
+Week4-2)
+
+package oops;
+import java.util.Scanner;
+public class Box {
+    int l,b,h,area,volume;
+    public Box() // Constructor without args
+    {
+    	l=1;
+    	b=1;
+    	h=1;
+    }
+    public Box(int p)
+    {
+    	l=p;
+    	b=p;
+    	h=p;
+    }
+    public Box(int p,int q,int r)
+    {
+    	l=p;
+    	b=q;
+    	h=r;
+    }
+    public void showDetails()
+    {
+    	System.out.println("L = "+l+" B = "+b+" H = "+h);
+    }
+    public int getArea()
+    {
+    	return l*b;
+    }
+    public int getVolume()
+    {
+    	return l*b*h;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner sc=new Scanner(System.in);
+       int m,n,o;
+       m=sc.nextInt();
+       n=sc.nextInt();
+       o=sc.nextInt();
+       Box b1=new Box(); // Constructor without args
+       Box b2=new Box(m); // Constructor with one arg
+       Box b3=new Box(m,n,o); // Constructor with 3 args
+	   System.out.println("BOX-1 Details:");
+	   b1.showDetails();
+	   System.out.println("Area = "+b1.getArea());
+	   System.out.println("Volume = "+b1.getVolume());
+	   System.out.println("=============================");
+	   System.out.println("BOX-2 Details:");
+	   b2.showDetails();
+	   System.out.println("Area = "+b2.getArea());
+	   System.out.println("Volume = "+b2.getVolume());
+	   System.out.println("=============================");
+	   System.out.println("BOX-3 Details:");
+	   b3.showDetails();
+	   System.out.println("Area = "+b3.getArea());
+	   System.out.println("Volume = "+b3.getVolume());
+	   
+	
+	}
+
+}
+
+3
+4
+5
+BOX-1 Details:
+L = 1 B = 1 H = 1
+Area = 1
+Volume = 1
+=============================
+BOX-2 Details:
+L = 3 B = 3 H = 3
+Area = 9
+Volume = 27
+=============================
+BOX-3 Details:
+L = 3 B = 4 H = 5
+Area = 12
+Volume = 60
+
+---------------------------------------------------------	
+this object:
+------------
+this is a generic object which is used to the following
+1) It is used to refer the currently executing object.
+2) It is used to differentiate local and global variable both are having same name, in that used this keyword before the global variable name.
+
+Example:
+Account
+Mobile
+
+Static:
+-------
+A class can have different properties. The proeperties are common for every object but their values are different from object to object such properites are called Instance variable or object dependent variables.
+
+Sometimes the properties and their values are common for every object such properites are called static properites or class properties.
+
+Types of variables:
+==================
+1) class variables or static variables
+   These are the varaible defined inside the class and outside the constructor and methods with a keyword called static.
+   Ex:
+       static int college_name="AEC"; 	// Static variables.
+	   
+2) Instance variable or Object Dependent variables
+   The variables which are defined inside the class and outside the constructor and methods without static keyword are called instance variables.
+   Ex:
+      int x,y;		// Instance Variables
+
+3) Local variable
+   A variable which is declared inside the method or constructor or a block are called local variables. The scope of the local variables is with in the block where it is declared.
+   public void m1()
+   {
+     int x;				// local variable.
+   }
+
+
+package oops;
+
+public class Customer {
+    String acno,name;
+    float bal;
+    static String bankname="Canara Bank";
+    static float total_bal=1000000;
+    
+    public Customer()
+    {
+    	System.out.println("Default");
+    }
+    public Customer(String acno,String name,float bal)
+    {
+    	this.acno=acno;
+    	this.name=name;
+    	this.bal=bal;
+    }
+    public void deposit(float amt)
+    {
+    	bal=bal+amt;
+    	total_bal+=amt;
+    }
+	public void withdraw(float amt)
+	{
+		bal=bal-amt;
+		total_bal-=amt;
+	}
+	public void showCustomerDetails()
+	{
+		System.out.println("Customer Acno: "+acno);
+		System.out.println("Customer Name: "+name);
+		System.out.println("Customer Balance: "+bal);
+		System.out.println("Bank Name: "+Customer.bankname);
+		System.out.println("========================================");
+	}
+	public static float getTotalBalance()
+	{
+		 return total_bal;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Customer c1=new Customer("CBI00001","Srinu",50000);
+        Customer c2=new Customer("CBI00002","Ramesh",75000);
+        c1.showCustomerDetails();
+        c2.showCustomerDetails();
+        c1.deposit(45000);
+        c1.showCustomerDetails();
+        System.out.println(getTotalBalance());
+        c2.withdraw(50000);
+        c2.showCustomerDetails();
+        System.out.println(getTotalBalance());
+        
+	}
+
+}
+
+Customer Acno: CBI00001
+Customer Name: Srinu
+Customer Balance: 50000.0
+Bank Name: Canara Bank
+========================================
+Customer Acno: CBI00002
+Customer Name: Ramesh
+Customer Balance: 75000.0
+Bank Name: Canara Bank
+========================================
+Customer Acno: CBI00001
+Customer Name: Srinu
+Customer Balance: 95000.0
+Bank Name: Canara Bank
+========================================
+1045000.0
+Customer Acno: CBI00002
+Customer Name: Ramesh
+Customer Balance: 25000.0
+Bank Name: Canara Bank
+========================================
+995000.0
+
+------------------------------------------------------------------------
+22-10-22
+Inheritance:
+============
+ Inheritance is a process of creating a new class from existing one.
+ 
+ Acquire the properties from parent class to child class is called inheritance.
+ 
+ 1) The main advantage of inheritance is "Code Reusability". i.e It avoid the rewrite the same code again and again.
+ 
+ 2) It reduces the code complexity.
+ 
+ 3) In java we use the keyword "extends" for implementing the inheritance.
+ 
+ 4) In inheritance the existing class also called as Parent/Base/Super and the newly created class is called as Child/Derived/Sub classes respectively.
+ 
+ Types of inheritance:
+ ---------------------
+ 1) Single Level Inheritance [1Parent - 1Child]
+    A class that can be inherited from one parent is called Single Level Inheritance.
+	
+ 2) Multi Level Inheritance  [GrandParent - Parent - Child]
+    A class that can be inherited from another class which is already inherited another parent.
+	
+ 3) Multiple Inheritance     [More than 1 Parent - 1 Child]
+    A class which is inherited from more than one parent is called multiple inheritance.
+	
+ 4) Heirarchical Inheritance [1Parent - Many Childs]
+    More than one class those are inherited from single parent class.
+	
+ 5) Hybrid Inheritance[More than one type of inheritance]
+    It is a combination of two or more types of inheritancse are invoved then it can be called as hybrid inheritance
+
+Note:
+=====
+	In Java Programming multiple inheritance is not supported through classes because ambiguity error is there if you are implemented mutliple inheritance.
+
+Practice Programs:
+------------------
+package inheritance;
+class A
+{
+	public A()
+	{
+		System.out.println("Parent Constructor");
+	}
+}
+class B extends A
+{
+	public B()
+	{
+		System.out.println("Child Constructor");
+	}
+}
+public class InheritanceDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      B b=new B();
+	}
+
+}
+
+Output:
+Parent Constructor
+Child Constructor
+
+--------------------------------------------------------------------------
+package inheritance;
+
+class Parent
+{
+	int x;
+	public void show()
+	{
+		System.out.println("Parent");
+		System.out.println(x);
+	}
+}
+class Child extends Parent
+{
+	int y;
+	public void display()
+	{
+		System.out.println("Child");
+		System.out.println(y);
+	}
+}
+
+
+
+public class InheritanceDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Child c=new Child();
+		c.display();
+		c.show();
+
+	}
+
+}
+
+Output:
+Child
+0
+Parent
+0
+
+Note:
+	In this the object is initialized with default value 0 for x and y.
+
+------------------------------------------------------------------------------------
+package inheritance;
+class Parent1
+{
+	int x;
+	public Parent1()
+	{
+		x=10;
+	}
+	public void show()
+	{
+		System.out.println("Parent X: "+x);
+	}
+}
+class Child1 extends Parent1
+{
+	int y;
+	public Child1()
+	{
+		y=20;
+	}
+	public void display()
+	{
+		System.out.println("Child Y: "+y);
+	}
+}
+public class SingleLevel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Child1 c1=new Child1();
+     c1.show();
+     c1.display();
+     Parent1 p1=new Parent1();
+     
+	}
+
+}
+
+Output:
+Parent X: 10
+Child Y: 20
+
+-----------------------------------------------------------
+package inheritance;
+class Parent11
+{
+	int x;
+	public Parent11()
+	{
+		x=10;
+	}
+	public void show()
+	{
+		System.out.println("Grand Parent X: "+x);
+	}
+}
+class Child11 extends Parent11
+{
+	int y;
+	public Child11()
+	{
+		y=20;
+	}
+	public void display()
+	{
+		System.out.println("Parent Y: "+y);
+	}
+}
+class Child22 extends Child11
+{
+	int z;
+	public Child22()
+	{
+		z=30;
+	}
+	public void print()
+	{
+		System.out.println("Child Z: "+z);
+	}
+}
+public class MultiLevel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Child22 c1=new Child22();
+     c1.show();
+     c1.display();
+     c1.print();
+     
+     
+	}
+
+}
+
+Output:
+Grand Parent X: 10
+Parent Y: 20
+Child Z: 30
+
+--------------------------------------------------------------------
+package inheritance;
+import java.util.*;
+class Decimal
+{
+	int x;
+	Scanner sc=new Scanner(System.in);
+	public void readX()
+	{
+		x=sc.nextInt();
+	}
+	public void show()
+	{
+		System.out.println("Decimal: "+x);
+	}
+}
+class Octal extends Decimal
+{
+	public void display()
+	{
+		System.out.println("Octal: "+Integer.toOctalString(x));
+	}
+}
+class HexaDecimal extends Decimal
+{
+	public void print()
+	{
+		System.out.println("Hexa Decimal: "+Integer.toHexString(x));
+	}
+}
+
+public class Hierarichical {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Octal o=new Octal();
+      o.readX();
+      o.show();
+      o.display();
+      System.out.println("=================================");
+      HexaDecimal h=new HexaDecimal();
+      h.readX();
+      h.show();
+      h.print();
+	}
+
+}
+
+Output:
+155
+Decimal: 155
+Octal: 233
+=================================
+155
+Decimal: 155
+Hexa Decimal: 9b
+-------------------------------------------------------------------------
+Method Overriding:
+In inheritance both parent and child has same method signature, then it is called method overriding. It means Child class inherit the methods from its parent and whenever if I created an object for Child class it can execute the method definition given by parent but sometimes the child is not intrested to execute the parent method definition then child will allow to write same method signature in it with its own definition. i.e the child overrides the method definition given by parent with its own definition.
+
+Rules of Method Overriding:
+	1) Method name should be same
+	2) Arguments should be same
+	3) Return type should be same or its child class are also allowed
+	4) Exception thrown by parent should be same or its child classes needed thrown in child method.
+
+package inheritance;
+
+class Chiranjeevi
+{
+	int bankBalance=1000;
+	
+	public void showProperites()
+	{
+		System.out.println("Rolls Royce");
+	}
+	public void showIdentity()
+	{
+		System.out.println("Mega Star");
+	}
+}
+class RamCharan extends Chiranjeevi
+{
+	int bankBalance=500;
+	public void showProperites()
+	{
+		super.showProperites();
+		System.out.println("Ferrari");
+		System.out.println(bankBalance);
+		System.out.println(super.bankBalance);
+	}
+	public void showIdentity()
+	{
+		System.out.println("Mega Power Star");
+	}
+}
+public class MethodOverridingDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      RamCharan rrr=new RamCharan();
+       rrr.showIdentity();
+       rrr.showProperites();
+      
+	}
+
+}
+
+Mega Power Star
+Rolls Royce
+Ferrari
+500
+1000
+
+-------------------------------------------------------------------
+package inheritance;
+class A1
+{
+	public void show()
+	{
+		System.out.println("Show method of Parent");
+	}
+}
+class B1 extends A1
+{
+	public void show()
+	{
+		super.show();
+		System.out.println("Display Method of Child");
+	}
+}
+public class OverridingDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       B1 b1=new B1();
+       b1.show();
+    //   b1.display();
+	}
+
+}
+
+
+----------------------------------------------------------------------------
+Super:
+ It is a keyword which is used to access the parent class members through child class if members of parent class are override in child class.
+ Syntax:
+	super.variable;
+	super.methodname();
+
+package inheritance;
+class grandparent1
+{
+	public void display()
+	
+	{
+		System.out.println("grandparent class");
+	}
+}
+class parent12 extends grandparent1
+{
+	public void show()
+	{
+		System.out.println("parentclass");
+	}
+}
+class child12 extends grandparent1
+{
+	public void print() 
+	{
+		System.out.println("child class");
+	}
+}
+
+public class hie {
+	public static void main(String[] args)
+	{
+		parent12 obj=new parent12();
+		child12 obj1= new child12();
+		obj.display();
+		obj.show();
+		obj1.print();
+		obj1.display();
+	}
+
+}
+
+
+grandparent class
+parentclass
+child class
+geandparent class
+
+--------------------------------------------------------------------------
+super() vs this():
+this() and super() are constructor calls, 
+
+this() is used to call the other constructor in the same class.
+super() is used to call the constructor of its parent class. 
+
+
+
+package inheritance;
+class AAA
+{
+	public AAA()
+	{
+		this("Technical HUB");
+		System.out.println("Hello Guest");
+	}
+	public AAA(String name)
+	{
+		//this();
+		System.out.println("Welcome to "+name);
+	}
+	
+}
+public class SuperDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AAA a=new AAA();
+
+	}
+
+}
+
+--------------------------------------------------
+package inheritance;
+class SrNTR
+{
+	int age;
+	public SrNTR(int p)
+	{
+	    age=p;
+	}
+	public void show()
+	{
+		System.out.println("Sr NTR Age: "+age);
+	}
+}
+class HariKrishna extends SrNTR
+{
+	int age;
+	public HariKrishna(int p,int q)
+	{ 
+		super(p);
+	    age=q;
+	}
+	public void show()
+	{
+		super.show();
+		System.out.println("HariKrishna Age: "+age);
+	}
+}
+class JrNTR extends HariKrishna
+{
+	int age;
+	public JrNTR(int p,int q,int r)
+	{
+	    super(p,q);
+		age=r;
+	}
+	public void show()
+	{
+		super.show();
+		System.out.println("Jr NTR Age: "+age);
+	}
+}
+public class SuperDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      JrNTR ntr=new JrNTR(100,70,38);
+      ntr.show();
+	}
+
+}
+
+------------------------------------------------
+
+final keyword:
+final is a keyword in java used to the following
+1) It is used to create the constants.
+    final float PI=3.14f;
+
+2) To avoid method overriding.
+	class Sample
+	{
+	  public final void show()
+	  {
+	  }
+	}
+	class Child extends Parent
+	{
+	   public void show()// Generate an error because show() declared as final in parent.
+	    {
+		
+		}
+	}
+
+3) To make a class as terminal class. i.e no other class allowed to inherit it.
+	final class Parent
+	{
+	
+	}
+	class Child extends Parent // Generates an error because Parent declared as final
+	{
+	
+	}
+
+-------------------------------------------------------------------------------------
+final keyword
+1) To create constants in java.
+   final float PI=3.14f;
+2) To avoid method overriding in java.
+   class A
+   {
+     public void m1()
+	  {
+	  
+	  }
+	  public final void m2()
+	  {
+	  
+	  }
+   }
+  class B extends A
+  {
+     public void m1()
+	 {
+	   // Acceptable
+	 }
+	 public void m2()
+	 {
+	    // Becuase he doesn;t have permission to override.
+	 }
+  }
+3) To Make a class as terminal class
+   final class A
+   {
+   
+   }
+   class B extends A // You don't have permission to extends from Class A
+   {
+   
+   
+   }
+----------------------------------------------------------------------------------------------
+super() and this()
+
+package inheritance;
+class A
+{
+	public A()
+	{
+		//this("THUB");
+		System.out.println("Welcome Guest");
+	}
+	public A(String name)
+	{
+		
+		System.out.println("Welcome to "+name);
+	
+	}
+}
+class B extends A
+{
+	public B()
+	{
+		super();
+		System.out.println("Default of  B");
+	}
+	public B(String name)
+	{
+		super(name);
+		System.out.println(name);
+	}
+	
+}
+public class Override {
+  public static void main(String args[])
+  {
+	  B b=new B("Srinu");
+  }
+}
+
+----------------------------------------------------------------------------------------
+Dynamic Method Dispatching
+Single parent class object is overloaded with different child class instance at different times, and it will invoke the related methods according to child class instance, which is held in that object at runtime. This is called “Dynamic Method Dispatching”. 
+
+Example:
+class X
+{
+	public void m1()
+	{
+		System.out.println("Aditya");
+	}
+	public void m2()
+	{
+		System.out.println("Sri Aditya");
+	}
+}
+class Y extends X
+{
+	public void m2()
+	{
+		System.out.println("Sai Aditya");
+	}
+}
+public class DynanicMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		X x=new Y();
+		x.m1();
+		x.m2();
+
+	}
+
+}
+
+------------------------------------------------------------
+Polymorphism: Many forms or Single object with different behaviours at different times.
+it is classified into two types
+1) Compiletime Polymorphism
+   Binding or mapping of method call with method definition done at compiletime is called Compiletime Polymorphism or Early Binding or Static Polymorphism.
+   Ex: Method Overloading implemented in the concept of Compiletime Polymorphism
+	  
+2) Runtime Polymorphism
+   Binding or mapping of method call with method definition done at run time based on the child class instance which is stored currently is called Runtime or Dynamic Polymorphism or Late Binding.
+   Ex: Method Overriding implmented in the concept of Runtime Polymorphism.
+
+
+Abstract method and abstract class
+=================================
+In some of the cases, it is not possible to give definition to the some of the methods in a class.
+
+Even though you are trying to give definition to these methods, it is meaningless. Such types of methods are called abstract methods.
+
+The class, which contains these abstract methods, will be treated as abstract class.
+ 
+The abstract methods only specify what to do, but not how to do. Abstract class may or may not have  non-abstract or concrete methods.
+
+We cannot create instance to the abstract class. But we can-create reference variable to the abstract class and it is able to store instance of its child class. 
+
+So abstract classes are always treated as parent classes. 
+
+We have to use ‘abstract’ keyword to make the class or method as abstract.
+
+abstract class Vehicle
+{
+	public abstract int get_No_Wheels();
+	public abstract int seating_Capacity();
+}
+class Bike extends Vehicle
+{
+	public int get_No_Wheels()
+	{
+		return 2;
+	}
+	public int seating_Capacity()
+	{
+		return 2;
+	}
+}
+class Auto extends Vehicle
+{
+	public int get_No_Wheels()
+	{
+		return 3;
+	}
+	public int seating_Capacity()
+	{
+		return 4;
+	}
+}
+class Car extends Vehicle
+{
+	public int get_No_Wheels()
+	{
+		return 4;
+	}
+	public int seating_Capacity()
+	{
+		return 5;
+	}
+}
+class Mainclass
+{
+	public static void main(String args[])
+	{
+		Vehicle v;
+		int w,c;
+		v=new Bike();
+		System.out.println("==============");
+		System.out.println("Bike:");
+		w=v.get_No_Wheels();
+		c=v.seating_Capacity();
+		System.out.println("No of Wheels: "+w);
+		System.out.println("Seating Capacity: "+c);
+		System.out.println("==============");
+
+		v=new Auto();
+		System.out.println("==============");
+		System.out.println("Auto:");
+		w=v.get_No_Wheels();
+		c=v.seating_Capacity();
+		System.out.println("No of Wheels: "+w);
+		System.out.println("Seating Capacity: "+c);
+		System.out.println("==============");
+
+		v=new Car();
+		System.out.println("==============");
+		System.out.println("Car:");
+		w=v.get_No_Wheels();
+		c=v.seating_Capacity();
+		System.out.println("No of Wheels: "+w);
+		System.out.println("Seating Capacity: "+c);
+		System.out.println("==============");
+	}
+}
+---------------------------------------------------------
+package oops;
+import java.util.*;
+abstract class Shape
+{
+	Scanner sc=new Scanner(System.in);
+	int m1;
+	float area;
+	public abstract void getInput();
+	public abstract void calArea();
+	public void showArea()
+	{
+		System.out.println(area);
+	}
+}
+class Rectangle extends Shape
+{
+	int m2;
+	public void getInput()
+	{
+		m1=sc.nextInt();
+		m2=sc.nextInt();
+	}
+	public void calArea()
+	{
+		area=m1*m2;
+	}
+}
+class Circle extends Shape
+{   final float pi=3.14f;
+	public void getInput()
+	{
+		m1=sc.nextInt();
+	}
+	public void calArea()
+	{
+		area=pi*m1*m1;
+	}
+}
+public class Abstractclassdemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Shape s;
+     s=new Rectangle();
+     s.getInput();
+     s.calArea();
+     s.showArea();
+     
+     System.out.println("==================");
+     s=new Circle();
+     s.getInput();
+     s.calArea();
+     s.showArea();
+     
+	}
+
+}
+
+12
+15
+180.0
+==================
+7
+153.86002
+
+----------------------------------------------------------------
+"instanceof" is a keyword in java which is used to know the which child class instance is presently stored in a parent class object.
+
+Syntax:
+		Parentclass_Obj instanceof Childclassname() 
+		
+interface
+-> interface is nothing but a fully abstract class. i.e all the methods which are declared inside the interface by default those are public abstract.
+-> It is not alllowed to create variables in interface. By default those are treated as public final variables.
+-> Use the keyword "interface" for creating the interface in java.
+-> All the abstract methods which are to be implmented in its child classes and here we need to use the keyword "implements" for implementing interface.
+
+package oops;
+interface Factorial
+{
+	int fact(int n);
+}
+class Dev1 implements Factorial
+{
+	public int fact(int n)
+	{
+		int f=1;
+		for(int i=2;i<=n;i++)
+			f=f*i;
+		return f;
+	}
+}
+class Dev2 implements Factorial
+{
+	public int fact(int n)
+	{
+		if(n==1)
+			return 1;
+		else
+			return n*fact(n-1);
+	}
+}
+public class InterfaceDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Factorial f;
+		f=new Dev1();
+		System.out.println(f.fact(10));
+		System.out.println("==================");
+		f=new Dev2();
+		System.out.println(f.fact(5));
+
+	}
+
+}
+
+--------------------------------------------
+1-12-22
+https://www.freecodecamp.org/news/java-interfaces-explained-with-examples/
+
+Abstract class
+Fruit - Base class
+  name, taste
+  eat()
+
+Apple
+Orange
+
+------------------------------------------------------
+			
+
+How to implement multiple inheritance through interfaces
+interface:
+----------
+Ex1:
+interface <interfacename>
+{
+   method1();
+   method2();
+   ......
+}
+class <classname> implements <interfacename>
+{
+   give the definitions for all the interface methods otherwise make this class as abstract class.
+}
+
+------------------------------------------------
+interface I1
+{
+  void m1();
+  void m2();
+}
+class AIML implements I1
+{
+  public void m1()
+  {
+    System.out.println("M1 method");
+  }
+  public void m2()
+  {
+     System.out.println("M2 method");
+  }
+}
+class Mainclass
+{
+  public static void main(String args[])
+  {
+     I1 i;
+	 i=new AIML();
+	 i.m1();
+	 i.m2();
+  }
+}
+
+-------------------------------------------------------------
+Exception Handling:
+==================
+Exception:
+  It is an unusual event that distrubs the normal flow of program execution.
+  
+If an exception is raised in your program it automatically terminate the program. that will be call it as abnormal termination.
+
+To avoid this abnormal termination we need to go for the Exception Handling.
+
+Exception Handling:
+It is a process of providing an alternative way to continue the rest of the program even an exception is raised in your program.
+The main objective of Exception Handling is "Graceful Termination".
+
+How to handle the Exceptions:
+----------------------------
+In java we have five keywords to handle the Exceptions.
+try        -  It is block used to include the statments chances to generate an    
+              Exception.
+			  This block of code is also called as "Risky Code".
+			  
+catch     -   It is used to handle the Excepetion.
+              This block of code is also called as "Handling Code".
+
+finally   -   It is used to execute the statements irrespective of an Exception 
+              Raised or not in your program.
+			  This block of code is also called as "Cleaning Code".
+
+throws
+throw
+
+Structure of Exception Handling through try,catch and finally.
+try
+{
+    //Risky Code
+}
+catch(ExceptionType obj)
+{
+   //Handling Code
+}
+finally
+{
+    //Cleaning Code.
+}
+Note: Without try we can't allow to write catch and finally.
+      Every try block is assoicated with either a catch or finally block.
+try{
+   //Risky Code
+}
+catch(ExceptionType obje)
+{
+   //Handling Code
+}
+-------------------------
+try
+{
+   //Risky Code
+}
+finally
+{
+   //Cleaning Code
+}
+
+
+
+
+class Excep1
+{
+  public static void main(String args[])
+  {
+    int x=6,y=0,z=0;
+    try
+    {
+       z=x/y;    //ArithmeticException
+    }
+    catch(ArithmeticException e)
+    {
+      //Handling Code
+      System.out.println("Y value should be Non Zero");
+    }
+    System.out.println(z);
+    System.out.println("Task Completed");
+   
+  }
+}
+------------------------------------------------
+class Excep3
+{
+  public static void main(String args[])
+  {
+     int x[]={10,20,30};
+    try{
+         for(int i=0;i<=x.length;i++)
+           System.out.println(x[i]);
+      }
+      catch(ArrayIndexOutOfBoundsException e)
+      {
+         System.out.println("Index reached to out of Bounds");
+      }
+     System.out.println("Task Completed");
+  }
+}
+
+----------------------------------------------------------
+try with multi catch:
+---------------------
+try 
+{
+  //Risky Code
+}
+catch(Exception1 o)
+{
+   //Handling Code
+}
+catch(Exception2 o)
+{
+  //Handling Code
+}
+........
+catch(Exception-n o)
+{
+  //Handling Code
+}
+
+-----------------------------------------------
+class Excep5
+{
+  public static void main(String args[])
+  {
+      int x,y,z=0;
+    try
+    {
+      x=Integer.parseInt(args[0]);
+      y=Integer.parseInt(args[1]);
+
+      z=x/y;
+    }
+    catch(ArithmeticException ae)
+    {
+       System.out.println("Y should be non zero element");
+    }
+    catch(ArrayIndexOutOfBoundsException aoe)
+    {
+        System.out.println("Minimum number of commnadline arguments required is 2 numbers");
+    }
+    catch(NumberFormatException nfe)
+    {
+       System.out.println("Input number contains alphabets");
+    }
+    catch(Exception e)
+    {
+      System.out.println("Default Exception Handling");
+    }
+     
+      System.out.println(z);
+      System.out.println("Task Completed");
+  }
+}
+
+-------------------------------------------------------------
+class Excep6
+{
+  public static void main(String args[])
+  {
+    try
+    {
+       System.out.println("In try block");
+       int z=10/0;    //ArithmeticException
+    }
+    catch(Exception e)
+     {
+       System.out.println("In catch Block");
+        int p=5/0;  //ArithmeticException
+     }
+     finally
+      {
+        System.out.println("In finally Block");
+        //Cleaing Code
+        //Whatever the files, connections opened in my program all            //should be closed in finally block.
+      }
+      System.out.println("Task Completed");
+  }
+}
+
+----------------------------------------------------------------------------
+throw, throws, rethrowing of an exception, try with resources.
+
+
+Arithmetic Exception:
+package exp;
+public class Exception1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  int x=10,y=4,z;
+		  System.out.println(x+" "+y);
+		  try {
+		  z=x/y;
+		  }
+		  catch(Exception e)
+		  {
+			  System.out.println(e);
+			  z=x/2;
+		  }
+		  System.out.println(z);
+
+	}
+
+}
+
+----------------------------------------------------------
+ArrayIndexOutOfBoundsException:
+package exp;
+public class Exception2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     int x[]= {10,20,30};
+     try {
+          for(int i=0;i<=3;i++)
+    	    System.out.println(x[i]);
+     }
+     catch(Exception e)
+     {
+    	 System.out.println(e);
+    	 System.out.println("Please be focus on index it crosses the range");
+     }
+     
+     System.out.println("Task Completed");
+	}
+
+}
+
+-------------------------------------------------------
+StringIndexOutOfBoundsException:
+package exp;
+public class Exception3 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         String s="";
+         System.out.println(s.charAt(1));
+         System.out.println("Task Completed");
+	}
+
+}
+
+---------------------------package exp;
+public class Exception4 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       int sum=0;
+       try {
+       for(int i=0;i<args.length;i++)
+       {
+    	   sum=sum+Integer.parseInt(args[i]);
+       }
+       }
+       catch(Exception e)
+       {
+    	   System.out.println("Input arguments should be Integers");
+       }
+       System.out.println(sum);
+       System.out.println("Task Completed");
+		
+	}
+
+}
+---------------------------------------------------------------
+class Exception5
+{
+  public static void main(String args[])
+  {
+    int x,y,z=0;
+   try
+    { x=Integer.parseInt(args[0]);
+      y=Integer.parseInt(args[1]);
+      z=x/y;
+    }
+    catch(ArithmeticException ae)
+     {
+           System.out.println("Second Arguments should be non zero element");
+     }
+     catch(NumberFormatException nfe)
+     {
+        System.out.println("Input should be contains digits only");
+     }
+     catch(ArrayIndexOutOfBoundsException aoe)
+      {
+         System.out.println("Minimum of two input numbers are needed to run this program");
+      }
+    catch(Exception e)
+     {
+         System.out.println(e);
+      }
+    System.out.println(z);
+    System.out.println("Task Completed");
+  }
+}
+
+---------------------------------------------------------------
+Exception
+  try, catch
+  
+  try -> It includes the block of statements which are chances to raises an exception. it is risky code.
+  
+  catch block:
+       handling code.
+	   Whenever an exception is raised in the try block immediately the controller passes that exception to catch block. 
+	   
+   try
+   {
+      risky code
+   }
+   catch(Exceptiontype obj)
+   {
+      handling code.
+	}
+	
+In Exception Handling try is assoicated with either catch block or finally block.
+finally clause:
+finally is a block is used to exectued irrespective of exception raised in the try block.
+
+ try
+ {
+ 
+ }
+ catch(Exceptiontype obj)
+ {
+ 
+ }
+ finally
+ {
+ 
+ }
+
+
+  try
+  {
+  
+  }
+  finally
+  {
+  
+  }
+
+------------------------------------------------------------------------
+Types of Exceptions
+Checked Exception:
+The Exceptions which are identified by the compiler at the time of compilation are called Checked Exceptions.
+Ex:
+    FileNotFoundException
+	IOExcepiton
+	InterruptedException
+	
+import java.io.*;
+class Sample
+{
+  public static void main(String args[])
+  {
+   try
+  {
+   PrintWriter pw=new PrintWriter("abc.txt");  //PrintWriter is used write the data into a file
+   pw.println("Srinu");
+   }
+   catch(FileNotFoundException ie)
+   {
+      System.out.println("Exception handled");
+   }  
+  }
+}
+
+-------------------------------------
+import java.io.*;
+class Sample
+{
+  public static void main(String args[])throws FileNotFoundException
+  {
+   
+   PrintWriter pw=new PrintWriter("abc.txt");  
+   pw.println("Srinu");
+   
+  }
+}
+-------------------------------------------------------
+import java.io.*;
+class Sample
+{
+  public static void main(String args[])throws InterruptedException
+  {
+     Thread.sleep(1000);
+  }
+}
+-----------------------------------------------
+Unchecked Exception:
+The Exceptions which are raised at runtime and which are not identified by the compiler are called Unchecked Exceptions.
+Ex:
+    ArithmeticException
+	NullPointerException
+
+
+
+------------------------------------------------------------
+Nested try block
+throw and throws
+User Defined Exception
+
+Exception Handling:
+-------------------
+-> Exception - A Runtime error.
+-> Exception Handling: To provide an alternative way to continue the rest of program even an exception raised in your program.
+-> try       - Risky Code.
+   catch     - Handling Code
+   finally   - Cleaing Code
+   throw
+   throws
+   
+-> Builting Exceptions
+    -> ArrayIndexOutOfBoundsException
+	-> ArithmeticException
+	-> StringIndexOutOfBoundsException
+	-> NullPointerException
+	-> NumberFormatException
+	-> InterruptedException
+	-> FileNotFoundException
+	etc.
+
+===========================================================================
+JDBC:
+JDBC stands for Java Database Connectivity. It is a statndard API which used to connect java application with different databases.
+
+Steps involved in Java Database Connectivity:
+=============================================
+1) Load and Register the Driver Software.
+   Class.forName(driversoftware);  // Register the driver software 
+   
+2) Establish the Connection with database by using Connection object.
+   Connection con=DriverManager.getConnection(url,username,password);
+   url -> to identify the database object.
+   username -> Name of the user [root]
+   password -> [set password]
+   
+3) Create either Statement object or PreparedStatement object for sending our 
+   requests to the database.
+   Statement st=con.createStatement();
+   
+4) Execute the query and create the ResultSet object.
+   ResultSet rs=st.executeQuery(query);
+   Ex:
+       ResultSet rs=st.executeQuery("select * from employee");
+	   //All the records of employee table are stored in rs object.
+	   
+5) Process the ResultSet object.
+   while(rs.next())
+   {
+     System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getFloat(3));
+   }
+
+6) Close the Connection
+   con.close();
+
+
+Programming Steps:
+==================
+1) Install the MySQL server in your system.
+2) Download the MySQL driver software from the following path.
+   https://dev.mysql.com/downloads/connector/j/?os=26
+
+3) Copy the driver software in to the following path.
+   C:\Program Files\Java\jre1.8.0_331\lib\ext
+   File: mysql-connector-java-8.0.29.jar
+
+4) set the classpath for the following 
+   path: 
+       C:\Program Files\MySQL\MySQL Server 8.0\bin
+   classpath: 
+     C:\Program Files\Java\jre1.8.0_331\lib\ext\mysql-connector-java-8.0.29.jar   
+
+5) Now you can start writing the java programs.
+C:\Users\LENOVO>mysql --version
+mysql  Ver 8.0.29 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\LENOVO>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.29 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| coder              |
+| db1                |
+| db2                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
+| thub               |
++--------------------+
+9 rows in set (0.13 sec)
+
+mysql> create database AIML;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use AIML;
+Database changed
+mysql> use db1;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| emp           |
+| employee      |
+| movie         |
+| politician    |
++---------------+
+4 rows in set (0.02 sec)
+
+mysql> select * from movie;
++------+---------+------------+------------+
+| mno  | mname   | Hero       | Heroine    |
++------+---------+------------+------------+
+|  101 | RRR     | RamCharan  | Alia Bhatt |
+|  102 | F3      | Venkatesh  | Tamanna    |
+|  103 | Acharya | Ram Charan | Pooja      |
+|  105 | Akanda  | Balayya    | Pragya     |
++------+---------+------------+------------+
+4 rows in set (0.03 sec)
+
+mysql> create table Sample(id int,name varchar(20),marks float(6,2));
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| emp           |
+| employee      |
+| movie         |
+| politician    |
+| sample        |
++---------------+
+5 rows in set (0.00 sec)
+
+
+
+Program -1: Database Connection
+import java.sql.*;
+class DatabaseConnection
+{
+	public static void main(String args[])throws Exception
+	{
+		//1.Load the the Driver software and register
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+		//2.Establish the Database Connection
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+        //Url: jdbc:mysql://localhost:3306/AIML
+		//username: root
+		//password: Thub@123
+		if(con!=null)
+			System.out.println("Database Connection is Successful");
+		else
+			System.out.println("Connection Failure");
+
+
+	}
+}
+------------------------------------------------------------------------
+Program - 2: Table Creation
+import java.sql.*;
+class Table_Creation
+{
+	public static void main(String args[])
+	{
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+			if(con!=null)
+				System.out.println("Database Connected");
+			else
+				System.out.println("Not Connected");
+
+			Statement st=con.createStatement();
+			
+			//create table <tablename>(field1 datatype,field2 datype,....);
+			
+			int count=st.executeUpdate("create table Movies(code varchar(20),name varchar(20),hero varchar(20),heroine varhcar(20),budget int)");
+			
+			if(count==1)
+				System.out.println("table created");
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+
+--------------------------------------------------------------------
+Program -3: Data Insertion
+import java.sql.*;
+class Insertion_Demo
+{
+	public static void main(String args[])
+	{
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+			if(con!=null)
+				System.out.println("Database Connected");
+			else
+				System.out.println("Not Connected");
+
+			Statement st=con.createStatement();
+			
+			//insert into <tablename> values(value1,value2,....);
+			
+			int count=st.executeUpdate("insert into movies values('BB01','BahuBali','Prabhas','Anushka',400)");
+			if(count==1)
+			System.out.println("Record Inserted Successfully");
+			
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+-----------------------------------------------------------------------
+Program -4: Upadation of records
+import java.sql.*;
+class Update_Demo
+{
+	public static void main(String args[])
+	{
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+			if(con!=null)
+				System.out.println("Database Connected");
+			else
+				System.out.println("Not Connected");
+
+			Statement st=con.createStatement();
+			//update tablename set fieldname=new_value [where condition]
+			
+			int count=st.executeUpdate("update movies set budget=2 where code='G1'");
+			if(count==1)
+			System.out.println("Record Updated Successfully");
+			
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+------------------------------------------------------------------
+Program -5: Deletion of Record
+import java.sql.*;
+class Delete_Demo
+{
+	public static void main(String args[])
+	{
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+			if(con!=null)
+				System.out.println("Database Connected");
+			else
+				System.out.println("Not Connected");
+
+			Statement st=con.createStatement();
+			//delete from <tablename> where condition
+			int count=st.executeUpdate("delete from movies where code='G1'");
+			if(count>0)
+			System.out.println("Record Deleted Successfully");
+			
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+
+---------------------------------------------------------------
+Program -6: Select or reterive the data from the table.
+import java.sql.*;
+class Select_Demo
+{
+	public static void main(String args[])
+	{
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AIML","root","Thub@123");
+			if(con!=null)
+				System.out.println("Database Connected");
+			else
+				System.out.println("Not Connected");
+
+			Statement st=con.createStatement();
+			//select * from tablename [where condtion];
+			ResultSet rs=st.executeQuery("select * from movies");
+			while(rs.next())
+			{
+				String mcode=rs.getString(1);  //first field
+				
+				String mname=rs.getString(2);  //Second filed
+				
+				String actor=rs.getString(3);  //Third field
+				String actress=rs.getString(4); //Fourth filed
+				int mbudget=rs.getInt(5); //Fifth filed
+
+				System.out.println(mcode+" -----"+mname+"------"+actor+"-------"+actress+"-------"+mbudget);
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+
+----------------------------------------------------------------------
+
+Table Creation:
+--------------
+  create table <tablename>(col1 datatype,col2 datatype,......);
+
+  Ex:
+  create table Movies(mno int,mname varachar(20),hero varachar(20),heroine varchar(20),budget int);
+
+Insertion of data:
+------------------
+  insert into <tablename> values(value1,value2,value3,...);
+  
+ Ex:
+  insert into Movies values(1,'Hit-2','Seshu','Menakshi',3);
+  
+Updatation of records:
+----------------------
+  update <tablename> set col1=newvalue,col2=newvalue,.. where condition;
+  
+  Ex:
+  update Movies set budget=13 where mname='Hit-2';  
+  
+  
+Deletion:
+---------
+  delete from <tablename> where condition;
+ 
+ Ex:
+  delete from movies where mname='Hit-2';
+  
+  
+Selection:
+---------
+  select * or col1,col2,... from <tablename> [where condition];
+  
+ Ex:
+  select * from movies where mname='Ginna';
+
+
+
+======================================================================
+16-12-22:
+---------
+Packages:
+Package is a collection of classes, interfaces and sub packages.
+It is used to separate the classes and interfaces according to their catagiry and usage.
+
+Advantages of Packages:
+------------------------
+1) Easy to access.
+2) To avoid naming conflicts 
+3) Maintanance is easy
+4) Security
+5) Searching time will be reduces on class or interface access.
+
+Types of packages:
+-----------------
+Basically packages are classified into two types.
+1) Built in packages or Predefined packages.
+   Packages which are created by the java develop as part of developement are called built in packages.
+   
+   or The packages which are created as part of jdk installation in your system are called built-in packages.
+   
+   Ex:
+       1) java.util   - classes and interface used for utility purpose
+       2) java.io     - classes and interface related to Input and   
+	                    output
+       3) java.sql    - It includes classes and interfaces related to 
+	                    database operations
+       4) java.lang   - It includes language fundamental classes and 
+	                    interfaces.
+       5) java.awt    - It includes the classes and interfaces related 
+	                    to GUI application developement.
+       6) java.net    - It include classes and interfaces related 
+	                    network applications.
+       7) javax.swing - GUI appliations
+	   etc....	   
+   
+Steps to involved how to working with Built in packages:
+--------------------------------------------------------
+step1: Import the package in your application
+       Syntax:
+	   import mainpackage.subpackage...*;
+	          It includes all the classes and interface in your application.
+	   import mainpackage.subpackage.classname;
+	          It includes the specified class only in your application.
+			  
+       Ex:
+	      import java.util.*;
+		  import java.util.Scanner;
+		  
+step2: Create an object for the class from that package.
+
+step3: Call the methods by using that object as per your requirement.
+Example1:
+import java.util.*;
+class Builtin1
+{
+	public static void main(String args[])
+	{
+		Stack s1=new Stack();
+		s1.push(10);
+		s1.push(20);
+		s1.push(30);
+		System.out.println(s1);
+		System.out.println(s1.pop()); //
+		System.out.println(s1);
+	}
+}
+
+Example2:
+import java.util.LinkedList;
+class Builtin2
+{
+	public static void main(String args[])
+	{
+		LinkedList l1=new LinkedList();
+		l1.add("Chiranjeevi");
+		l1.add("Nagarjuna");
+		l1.add("Venkatesh");
+		System.out.println(l1);
+		l1.add(1,"Balayya");
+		System.out.println(l1);
+	}
+}
+-------------------------------------------------------------
+2) User Defined Packages
+Step1: Create user define package.
+Step2: Provide the location information about your packages.
+Step3: Import user defined package in your application.
+
+Rules to create a package:
+-------------------------
+1) If you want to create a package in your file "package" should be first statement.
+2) Any number of classes you can allow to write inside a package but one class must be public.
+-------------------------------------------------------------------
+Example-1:
+
+Step1:  Package Creation
+========================
+package aec.aiml;
+public class ABC
+{
+	public void show()
+	{
+		System.out.println("Avatar Show");
+	}
+}
+
+Step2: setting of classpath [Information about the location of class files]
+========================================================
+Compilation:javac -d <path> filename.java
+           :javac -d D:\Avatar2022 ABC.java
+
+Step3: Importing user defined package in another application
+=========================================================
+import aec.aiml.ABC;   //importing of user defined package.
+class Sample
+{
+	public static void main(String args[])
+	{
+		ABC a=new ABC();
+		a.show();
+	}
+}
+
+Execution:
+==========
+D:\Javaprograms>javac Sample.java
+D:\Javaprograms>java Sample
+Avatar Show
+
+---------------------------------------------------------------------
+Example-2:
+=========
+Step1:
+package aec.aiml.math;
+public class ArithmeticOperations
+{
+	public int add(int x,int y)
+	{
+		return x+y;
+	}
+	public int add(int x,int y,int z)
+	{
+		return x+y+z;
+	}
+	public int mul(int x,int y)
+	{
+		return x*y;
+	}
+	public int sub(int x,int y)
+	{
+		return x-y;
+	}
+}
+
+Step2:
+D:\javaprograms>javac -d D:\Avatar ArithmeticOperations.java
+It creates
+   D:
+   |
+    -> Avatar
+		|
+		 -> aec
+			 |
+			  -> aiml
+				  |
+				   ->math
+					  |
+					   -> ArithmeticOperations.class
+
+Step3: Numbers.java
+import java.util.Scanner; //Builtin Package
+import aec.aiml.math.ArithmeticOperations;
+class Numbers
+{
+   public static void main(String args[])
+   {
+      int x,y;
+	  Scanner sc=new Scanner(System.in);
+	  ArithmeticOperations a=new ArithmeticOperations();
+	  x=sc.nextInt();
+	  y=sc.nextInt();
+	  System.out.println(a.add(x,y));
+	  System.out.println(a.add(x,y,x));
+	  System.out.println(a.mul(x,y));
+	  System.out.println(a.sub(x,y));
+   }
+}
+
+Execution:
+----------
+D:\javaprograms>javac Numbers.java
+D:\javaprograms>java Numbers
+10 20
+30
+40
+200
+-10
+
+----------------------------------------------------------------------
+Basically applications are classified into 2 types
+1) CUI Applications
+       Command User Interface.
+	   
+2) GUI Applications
+   These are applications developed it includes the components like Buttons, Checkboxes, Label, SelectBox.
+   
+   1) Applets
+      Applet is a small java program that runs over the internet.
+	  
+   2) Frames
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+CLASSPATH: 
+CLASSPATH is an environment variable which is used by Application ClassLoader to locate and load the .class files. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
+	   
+	   
+	   
+
